@@ -5,6 +5,9 @@ Java Programming Basics to Advanced taught in Jspider Hebbal, Java Batch H++E8
 
 ** if you want to get the all the notes , Make sure give it a star: 
 
-1. Clone the repo or jsut Download and Extract the Zip File :
+** This Repo will contain the basic Disscussion and the Daliy Assignment Problems related to coding as
+well as theory.
+
+
 
 
