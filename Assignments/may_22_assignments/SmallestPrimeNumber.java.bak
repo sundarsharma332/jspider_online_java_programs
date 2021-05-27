@@ -1,12 +1,12 @@
 import java.util.*;
 
-class  largestPrimeNumber
+class  SmallestPrimeNumber
 {
 	public static void main(String[] args) 
 	{
 		int arr[] = ReadArray();
-		int larger = LargestprimeNumberInArray(arr);
-		System.out.println(larger);
+		int smaller = SmallestprimeNumberInArray(arr);
+		System.out.println(smaller);
 	}
 
 	public static boolean isPrime(int a){
@@ -17,16 +17,16 @@ class  largestPrimeNumber
 		return true;
 	}
 
-	public static int LargestprimeNumberInArray(int arr[]){
-		int larger = Integer.MIN_VALUE;
+	public static int SmallestprimeNumberInArray(int arr[]){
+		int smaller = Integer.MAX_VALUE;
 		for(int i = 0; i < arr.length; i++){
 			if(isPrime(arr[i])){
-				if(arr[i] > larger){
-					larger = arr[i];
+				if(arr[i] < smaller){
+					smaller = arr[i];
 				}
 			}
 		}
-		return larger == Integer.MIN_VALUE ?  -1 : larger;// - 1 means there is no prime number exist.
+		return smaller;
 	}
 
 	public static int[] ReadArray(){

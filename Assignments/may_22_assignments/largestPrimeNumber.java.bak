@@ -26,7 +26,7 @@ class  largestPrimeNumber
 				}
 			}
 		}
-		return larger == Integer.MIN_VALUE ?  -1 : larger;// - 1 means there is no prime number exist.
+		return larger == Integer.MIN_VALUE ?  -1 : larger;
 	}
 
 	public static int[] ReadArray(){

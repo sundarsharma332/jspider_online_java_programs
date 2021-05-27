@@ -26,7 +26,7 @@ class  SmallestPrimeNumber
 				}
 			}
 		}
-		return smaller;
+		return smaller == Integer.MAX_VALUE ?  -1 : smaller;
 	}
 
 	public static int[] ReadArray(){
