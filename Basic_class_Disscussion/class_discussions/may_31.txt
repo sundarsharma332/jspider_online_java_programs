@@ -1,0 +1,295 @@
+10 -> primitive int
+"10" -> non primitive(strin)
+\
+
+
+int x = "10" => wrong
+
+
+cte _> cannot convert from string to int
+
+
+Intger.ParseInt(string) -> static method ParseInt of class Integer
+Int a = Integer.ParseInt(string);
+
+// convert string into integer.
+
+
+int x = "10" -> wrong 
+int x = Integer.ParseInt("10"); -> correct
+
+
+String s = "Hi guys how are you";
+
+the spacce is called delimiter.
+
+
+String s = "Hi-guys-how-are-you";
+
+=> in this case the hiphen is the delimiter.
+=> delimiter means Separetor , generally we use spacce as a delimiter.
+
+
+=> now , I want to break the entire string or split the string based on
+the delimiter used lets say .space " ";
+String test = "hello there";
+
+String s[]  = test.split(" ");
+here the split will convert the string to the array of stirng.
+return type must be array of strings.
+
+
+s[] => {"hello" , "there"};
+
+
+
+String s = "10 20 30 40 50"; // string 
+if we use the split method based on the space delimiter then it will return 
+the string array.
+
+String test[] = s.split(" ");
+test[] = {"10", "20", "30", "40", "50"}
+
+to access the test[i] as integer. we have to use
+Int x = Integer.ParseInt(test[0]);
+
+
+
+Q. write a program to print all the number in a series of number provided by the
+user.
+
+
+the input will be in the form of string.
+
+input : 
+
+3 6 7 8 9 10 4 17
+
+op : 
+7 17  
+
+
+/* 
+steps : 1 => split the string based on the space delimiter.
+steps : 2 => traverse through all the elements in the arrray of string.
+steps : 3 => take the element and convert into Integer and check for the
+             prime.
+             if true: 
+                 print the numbers.
+
+*/
+
+
+code : 
+
+static void PrintPrime(String s){
+    String str[] = s.split(" ");
+    for(int i =0; i < str.length(); i++){
+        int x = Integer.ParseInt(str[i]); // convert to number.
+        if(isPrime(x){
+            System.out.print(Integer.ParseInt(str[i]))  // print as string
+            System.out.print(Integer.ParseInt(str[i])) // print as integer.
+        }
+}
+}
+
+static boolean isPrime(int n){
+    for(int i = 2; i  < n; i++){
+        if(n % i == 0) return false;
+    }
+    return true;
+}
+
+
+note : Integer.ParseInt(); => comes under Lang Package or default package.
+Assignments: 
+
+Q2. smallest prime numbr in the given series of number.
+
+ip:
+7 3 9 11 13 2
+0p:
+2
+
+
+q3. write a program to print true if successive same digits. // difficult as sir said.
+
+Q3. Write a program to find the largest of three numbers.
+ip : 4 6 1 
+
+
+// find the three digit odd numbers within the string of numbers.
+ip : 
+
+12345566
+
+op : 
+566
+
+Q4. Write a program to print all the negative numbers in a sequence if numbers.
+op : 
+
+5 -3 9 -12 87
+
+
+
+interview Qestions : 
+
+
+questions are something like this:
+
+
+There is an series of item price , if the item price < 1000 then there is no discount, 
+if price is > 1000, and less than 1500 then 10 % discount. if the price is >=
+1500, then 20% discount;
+
+ip : 
+
+
+1000 1200 1500
+
+op : 
+
+1000 1080 1200
+
+
+
+steps1 => convert the string into the aray of string.
+steps2 => traverse through all the element in the string array and then 
+          pick the element and preform the operations.
+
+steps3 => return the result.
+
+
+
+code :
+
+Static void solve(String s){
+    String prices[] = s.split(" ");
+    for(int i = 0; i < prices.length; i++){
+        int x = Integer.ParseInt(prices[i]){
+            if(prices[i] > 1000 && prices[i] < 1500){
+                int discountedprice = prices[i] - prices[i]
+                sop(discountedprice + " ");
+            }
+        }
+    }
+}
+
+Q. in a series of number , if there are 2 consecutive even numbers or odd numbers
+the print true, if there are even and odd then print false.
+
+
+ip : 
+
+2 4 5 7 9 23 34
+
+op: 
+true false true trur true false;
+
+
+disscussions:
+
+
+
+string s = "Hello"
+
+
+s.charAt(0) = > "H";
+s.charAt(1) = > "e";
+s.charAt(2) = > "l";
+s.charAt(3) = > "l";
+s.charAt(4) = > "0";
+s.charAt(5) = > null
+
+
+
+ '0' - 48 = 0;
+ '1' - 48 = 1;
+ '2' - 48 = 2;
+ '3' - 48 = 3;
+ '4' - 48 = 4;
+ '5' - 48 = 5;
+ '5' - 48 = 6;
+ '6' - 48 = 7;
+ '7' - 48 = 8;
+ '8' - 48 = 9;
+
+
+if it is char then , assume '1' 
+
+best way to convet it into int is :
+
+'1' - 48 = 1;
+
+
+ Integer.ParseInt("1") // valid string parameter 
+ Integer.ParseInt('1') // invalid character parameter
+
+
+ the parameter for the Integer.ParseInt must  be string and should not contain
+ any alphanumeric.
+
+
+code :
+
+
+String s = "123";
+int sum = 0;
+for(int i = 0; i < s.length(); i++){
+    sum += s.charAt(i);
+}
+sop(sum); // 150 
+
+it will print the sum of ascii values of 1, 2, 3.
+1-> 49
+2-> 50
+3 ->51
+
+
+so 49 + 40 + 51 = 150 
+
+
+so if we want the sum as 6. i.e , 1 + 2 + 3 = 6
+
+then we habe to sum as integer.
+sum += s.charAt(i) - 48;  
+
+
+
+Q. In a given series of Binary number write a program to count number of 1's 
+and zeros.
+
+
+input :
+
+10010 , 10010101 , 0101010101
+
+op : 
+1-> 2 
+0 ->3
+
+=> simple as hell , like we did in previous questions 
+first split into the array and then traverse throught the string of array, 
+take one stirng and count the 1 and zeros by substracting witht the ascii value.
+
+
+
+
+Q. in a given binary number print true if consecutive 1 is occur , print false if 
+consecutive o's occur.
+
+
+ip : 
+
+10001110111000
+
+
+op :
+false , false , true, false, true, false
+
+
+
+
+
+
