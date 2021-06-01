@@ -1,0 +1,168 @@
+Q. PRint all the prime number  form the sequence of numbers.
+
+input : 
+1 2 3 4 5 6 7 89 83
+
+output: 
+2 3 5 7 83
+
+Algorithms:
+
+
+step 1 : convert the input stirng into the array of strings.
+         can be done using split function.
+
+step 2 : Traverse through the all the elements of the array and then 
+          ckeck for the prime number.
+          if (elements traversed is prime )
+              print the elements or store into array is upto you >
+
+step 3 : end for
+step 4 :stop
+
+
+
+
+code : 
+
+Scanner xc = new Scanner(System.in);
+String input_string = xc.nextLine();
+String [] input_string_array = input_string.split(" ");
+solve(input_string_array , input_string_array.length);
+
+
+static void solve(String []input , int n){
+    for(String s : input){
+        int x = Integer.parseInt();
+        if(isPrime(x)){
+            System.out.print(x + " ");
+        }
+    }
+}
+
+static Boolean isPrime(int n){
+    if(n == 1) return false;
+    for(int i = 2; i < n; i++){
+        return false;
+    }
+    return true;
+}
+
+
+
+
+Q2 . write a program to print the largest of 3 numbers given
+in the series of number.
+input : 
+4 6 1
+
+op: 
+6
+
+Algorithms : 
+
+
+step 1 : convert the input stirng into the array of strings.
+         can be done using split function.
+
+step 2 : Traverse through the all the elements of the array and then 
+          store it to anoter varible a , b c 
+          perform logical operation to find the max.
+          then return;
+          :end for
+step 4 :stop
+
+
+logic : 
+
+Scanner xc = new Scanner(System.in);
+String input_string = xc.nextLine();
+String [] input_string_array = input_string.split(" ");
+int max = solve(input_string_array , input_string_array.length);
+Sop(max);
+
+static void solve(String s[] , int n){
+    int max = Integer.parseInt(s[0]);
+    for(int i = 1; i < n; i++){
+        int x = Integer.parseInt(s[i]){
+            if(x > max){
+                max = x;
+            }
+        }
+    }
+    return max;
+}
+
+
+q3. 
+Write a program to print all the negative numbers in the 
+sequences.
+
+ip: 
+5 3 9 -6 -12 -19
+
+op: 
+-6 -12 -19
+
+
+Algorithms :
+
+
+step 1 : convert the input stirng into the array of strings.
+         can be done using split function.
+
+step 2 : Traverse through the all the elements of the array and then 
+          store it to anoter varible a , b c 
+          perform logical operation to find the negative number.
+          then return;
+          :end for
+step 4 :stop
+
+code snippet : 
+Scanner xc = new Scanner(System.in);
+String input_string = xc.nextLine();
+String [] s = input_string.split(" ");
+solve(s, s.length); // method calling.
+
+
+
+// array string and length of the array
+void solve(String s[] , int n){
+    for(int i = 0; i < n; i++){
+        if(Integer.parseInt(s[i] < 0)){
+            System.out.print(s[i] + " ");
+        }
+    }
+}
+
+
+
+Q4. 
+
+There is a series of item of price if the item price is
+less than 1000 then there is no discount , if the price is greater 1000 and less than 1500 then there is 10 % discount
+if the price is greater or equal to the 1500 then there is 20 % discount.
+
+static void solve(String s[]){
+        for(String s_t : s){
+            int num = Integer.parseInt(s_t);
+            System.out.println("num =>" +  num);
+            if(num <= 1000){
+                System.out.println(num);
+            }
+            else{
+                if(num < 1500){
+                    int pp = num - (num * (10/100));
+                    System.out.println(pp);
+                }
+                else{
+                    int pp = num - (num * (20 / 100));
+                    System.out.println(pp);
+                }
+            }
+        }
+}
+
+
+Q.5 :
+
