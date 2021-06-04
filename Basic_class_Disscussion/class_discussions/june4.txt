@@ -1,0 +1,178 @@
+System.out.println('A'); // A
+System.out.println((int) 'A'); // 65
+System.out.println(65); // 65
+System.out.println((char)65); // A
+System.out.println('9'); // 9
+System.out.println((int)'9'); // 57
+System.out.println('0' + 4); // A
+System.out.println(0); // int 0
+System.out.println('0' - 48); // int 0
+System.out.println('2' - 48); // int 2
+
+
+
+inportant predefined methods of string 
+---------------------------------------
+
+String s = "java programming";
+
+s.length(); // 16
+
+=> returns the length of the string.
+
+s.charAt(6); // r
+
+=> returns the character present in the particular index.
+
+s.contains("java); // true
+
+=> if the string contains the substring as java then it will return true.
+
+s.contains("hello"); // false
+
+=> if the string contains the substring as java then it will return true.
+
+s.indexOf('a'); // 1
+
+=> return the index that first appear character input.
+
+s.lastIndexOf('a'); // 10
+
+=> return the index that last appear character input.
+
+s.startsWith("jav"); // true;
+
+=> if the string starts with the given substring in boolean .
+
+s.endsWith("ing"); // true;
+=> if the string ends with the given substring in boolean .
+
+
+
+s.toCharArray(); // converts the string to the character array.
+=> creat an char array of length of the string and
+take each individual character and put it separately at
+contigious memory location based on thier index.
+
+
+s.split(String delimeter); // split the string and convert it into the
+string array of length of string - number of delimeter present.
+
+s.equals(string str);
+=> compare two string , s with str.
+
+s.equalsIgnoreCase(string s); 
+=> conpare the string despite the case sensitivity.
+a = A => return true;
+
+s.substring(s.indexOf('p')) // programming
+
+s.substring(5 , 12) // Program  // return the string starts with index 5 and ends with 13.
+
+
+
+hello  -> s.toCharArray()---> h e l l o
+
+char ch[] = {'H','e','l','l','o'};
+to convert it back to the string we use , 
+String s = new String(ch);
+
+
+java programming
+----------------
+
+string s = "hello";
+for(int i =0; i < s.length(); i++){
+    Sop(s.charAt(i)); // prints character by character // h e l l o
+}
+
+string st_array[] = s.toCharArray();
+for(int i = 0; i < st_array.length; i++){
+    sop(i); // print array charecter // 'h' e l l 0
+}
+
+print in reverse order
+---------------------
+
+for(int i = st_array.length - 1; i >= 0; i--){
+    sop(i); // prints o l l e h
+}
+
+
+-------------------------------------------
+String s = "hello";
+String rev = "";
+rev = rev + 'o';  // string + charecter => concatinate 
+Sop(rev); // o => this o is string.
+rev = rev + 'l';  // string + charecter => concatinate 
+Sop(rev); // ol => this ol is string.  
+rev = rev + 'l';  // string + charecter => concatinate 
+Sop(rev); // 0ll => this oll is string.  
+rev = rev + 'e';  // string + charecter => concatinate 
+Sop(rev); // o => this olle is string.  
+rev = rev + 'H';  // string + charecter => concatinate 
+Sop(rev); // olleH => this olleh is string.  
+
+------------------------------------------------
+
+print from reverse in string.
+
+-> traverse each charecter from the s.length - 1th index to the zero 
+and print it.
+
+for(int i = s.length - 1; i >= 0;i--){
+    sop(s.charAt(i));
+}
+
+
+-----------------------------------------
+1. java program to reverse the string
+
+
+1.Method 1(Without converting to array)
+  => Brute force approach // naive approacch
+Algorithm:
+----------
+step 1 : Take an empty string and intiilize.
+step 2 : Take an empty string called rev & start extracting
+         char from the end of the original string and append
+         to the empty string.
+step 3 : return rev string.
+
+String reverseString(String s){
+    for(int i = s.length - 1; i >= 0; i--){
+        sop(s.charAt(i));
+    }
+}
+
+Methhod 2 : ( using converting to char array)
+------------
+step 1 : create a charecter array 
+and convert the input string to charecter array.
+the print it from backwards.
+
+char ch[] = s.toCharArray();
+for(int i = ch.length - 1; i >= 0; i--){
+    sop(ch[i]);
+}
+
+Method 3 : (convert to array and swap);
+---------------------------------------
+
+String s = sc.nextLine();
+        char ch[] = s.toCharArray();
+        int low = 0;
+        int high = ch.length - 1;
+        while(low < high){ // swap char[i] with char[ch.length - 1 - i];
+            char temp = ch[low];
+            ch[low] = ch[high];
+            ch[high] = temp;
+            low++;
+            high--;
+        }
+        String new_string = new String(ch);
+        System.out.println(new_string);
+
+
+
+
