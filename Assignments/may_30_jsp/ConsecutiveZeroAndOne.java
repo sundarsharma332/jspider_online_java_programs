@@ -11,7 +11,7 @@ class ConsecutiveZeroAndOne {
     }
 
     static void ConsecutiveOneAndTwo(String s){
-        for(int i = 0; i < s.length(); i+=2){
+        for(int i = 0; i < s.length() - 1; i+=2){
             if(s.charAt(i) == s.charAt(i + 1)){
                 System.out.print("true" + " ");
             }else{
