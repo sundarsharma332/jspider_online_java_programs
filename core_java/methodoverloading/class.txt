@@ -1,0 +1,103 @@
+method OVERLOADING :-
+
+we can overload
+ >> static method
+ >> non static method
+ >> main method
+
+
+
+
+
+
+
+
+
+NON STATIC METHOD OVERLOADING
+--------------------------------------
+
+
+
+
+
+
+class test {
+    public int sum(int a , int b){
+     return a+b;
+    }
+    public double sum(double a , double b){
+        return a + b;
+    }
+    public float sum(float a , float b){
+        return a + b;
+    }
+}
+class Main{
+    public static void main(String args[]) {
+        test obj = new test();
+        System.out.println(obj.sum(1 , 2));
+        System.out.println(obj.sum(1.2 , 2));
+        System.out.println(obj.sum(1.5f , 2));
+    }
+}
+
+
+class test {
+
+    // gives the Compile time error.
+    public void print(){
+        System.out.println("hi");
+    }
+    public int print(){
+        System.out.println("hi");
+        return 10;
+    }
+}
+class Main{
+    public static void main(String args[]) {
+        test obj = new test();
+        obj.print(); // COMPILE TIME ERROR.
+
+    }
+}
+
+// In one class we can not
+hab emore than one method with the same 
+name and same signature.
+
+ --------------------------------------------
+ MAIN METHOD OVERLOADING
+ -----------------------------------
+
+class test {
+    public static void main(){
+        System.out.println("no argument main method");
+    }
+      public static void main(int a){
+        System.out.println("int argument main method");
+    }
+      public static void main(double a){
+        System.out.println("double argument main method");
+    }
+    public static void main(String args[]) {  // staring array as argument
+        System.out.println("main method of test class");
+        for(String word : args){
+            System.out.print(word + " ");
+        }
+    }
+}
+class Main{
+    public static void main(String args[]) {
+        System.out.println("main method of test class");
+        test.main();
+        test.main(21);
+        test.main(11.34);
+        String s[] = {"sundar", "sharma"};  // create the string array
+        test.main(s); // call main method from another main method.
+
+    }
+}
+
+
+
+
