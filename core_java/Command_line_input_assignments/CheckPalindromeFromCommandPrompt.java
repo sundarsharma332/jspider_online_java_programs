@@ -24,14 +24,3 @@ class  CheckPalindromeFromCommandPrompt
 		return true;
 	}
 }
-
-/*
-
-input : 
-PS D:\Jspider_java_programming\core_java\Assignments> javac CheckPalindromeFromCommandPrompt.java
-PS D:\Jspider_java_programming\core_java\Assignments> java CheckPalindromeFromCommandPrompt madam refer malayalam sundar jspider
-
-output: 
-madam refer malayalam
-
-*/

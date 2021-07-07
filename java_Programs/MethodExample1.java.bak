@@ -1,0 +1,28 @@
+class MethodExample1 
+{
+
+
+
+	static void sample1(){
+		System.out.println("Main Starts");
+		System.out.println("Main Ends");
+
+	}
+	static void sample2(){
+		System.out.println("Main Starts");
+		System.out.println("Main Ends");
+	}
+	static void sample3(){
+		System.out.println("Main Starts");
+		System.out.println("Main Ends");
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("Main Starts");
+		sample1();
+		sample2();
+		sample3();
+		sample1();
+		System.out.println("Main Ends");
+	}
+}

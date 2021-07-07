@@ -29,15 +29,3 @@ class  SumOfExtractedDigitsInAlphanumericString
          return false;
 	}
 }
-
-/*
-
-
-input: 
->> javac SumOfExtractedDigitsInAlphanumericString.java
->> java SumOfExtractedDigitsInAlphanumericString 123sundar 12capetown34 45mentalist
-
-output: 
- 6 10 9
-
- /*

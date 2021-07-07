@@ -1,0 +1,989 @@
+>> In java the flow of execution of the program starts from main method.
+
+public static void main(String [] args){
+    // code 
+}
+
+if we swap the static keyword with public keyword then we will get
+runtime error by saying "main method not found".
+
+>> A source file can contain any number of class but according to standard
+it is not recomended.
+
+>> The number of byte code genrated after the compilation strictly depends 
+upon the number of classes present in the source code.
+>> after the Compilation of the java program , For the JVM to execuetion
+we should give only that byte code file that has Main method present in it.
+
+DATA members-
+--------------
+
+>> there are two types of data members present in java programming.
+1. static data member
+>> Static int x = 10; // static data member;
+2. non static data members
+>> int x = 10;
+
+>> there are two types of methods in the java programming
+1. static methods
+>> public static void main(){
+    // code
+}
+, 
+public static int sum(int a , int b){ // static method returns sum of two integers.
+    return a + b;
+}
+2. non static methods.
+
+public void print(int a){ // non static method which takes one integer as an argument and print it.
+
+    Sop(a);
+}
+
+Q. can we declare the static data member inside the method or as local variable >>
+
+>> ans : NO , we will get the compilation error.
+
+
+basic 
+------
+non static data member , methods can not acceess from static methods. 
+
+3 types of variable 
+
+>> local variable 
+>> static variable
+>> non static varaiable
+
+Aceessing static member of the class can be accessed by using the
+ClassName.
+syntax: 
+>> className static member name;
+class A{
+    static int x = 1;
+    public staic int sum(int a , int b){
+        return a + b;
+    }
+    public static void main(String [] args){
+        sop(A.x)// 1;
+        sop(A.sum(2, 3)); // 5 
+
+        A.x = 10; // reassigning the value 10 to the static data members using classname.
+        sop(A.x); // 10 
+    }
+}
+
+>> Static , non static and local variable can be re-assigned any number of
+times as long as they are not final.
+
+static and non sttatic data members by default contains default values.
+
+int : 0
+double : 0.0
+char : empty
+string : null
+
+Acessing non static data member
+---------------------------------
+>> To access the non static data member and methhod from another class or method
+we have to create an object of that class.
+>> In java We create the object by using "new" keyword.
+>> eg. new className();
+>> after creating the object we refer the  created object to some variable called
+reference variable.
+>> classname refernce_variable = new ClassName();
+
+>> While the object is created , all non static member are
+loaded into the memory called Heap area.
+
+
+class test{
+    int x = 10;
+    public static void main(String [] args){
+        // if we want to access the non static data member from another class or method.
+        test t = new test();
+        // hree t is the reference variable.
+        // t is non primitive , class type.
+        t = some_value; // error (we cannot do this)
+    }
+}
+
+
+Instaciation: 
+--------------------------
+
+difination: 
+>> It is the process of crating an object of a clas if we want to acceess
+non staic member of the class , then we need to instatciate the class.
+
+in the above code.
+
+test t = new test();
+
+test -> className
+t  = reference_variable
+new -> keyword
+test() -> constructor
+
+Scanner sc = new Scanner(System.in);
+-> scanner is the className and we are creating an object of scanner 
+class to access the non static properties of that class.
+-> in this case it is parameterized constructor.
+
+
+
+test t1 = new test();
+test t2 = new test(); 
+At a time one reference varaiable can not refers to two objects.
+
+
+Execution of static and non static data members
+------------------------------------------------
+
+Class A{
+    static int x = 20; // static data member
+    int y = 10; // non sataic data members.
+    static void print(){ // static method
+        // code
+    }
+    public int sum(){ // non static method
+        // code
+    }
+}
+
+to access the static data member and method. we use the classname
+>> sop(A.x)
+>> A.print();
+
+
+for the non static member we create an object of that class.
+
+A a = new A();
+a -> refernce_variable
+new A() -> Onject of the class A.
+
+1. static members of the class will be loaded at the time of class loading, 
+which happens in the compilation time , and all the static data members and
+methods are stored in the class Area while the non static data member of the Classa
+are created at the time of object createon or runtime or execuetion time. and all the
+non staic properties of the class are stored  in memory called heap area.
+
+>> During the class loading only one copy of the static members will be loaded
+at the time of class loading, where as no of static members copy loaded depends
+upon the number of object being created.
+
+>> static members belong to the entire class but non static member belong to the
+individual onjects.
+
+>> class loading activity takes place first then the onject creation activity.
+
+Object Initilization:
+-----------------------
+
+>> It is the process of initilizing the data members of object.
+>> object can be initilize in two ways.
+1. by using referemce variable
+2. by using constructor
+3. by using methods.
+
+-----------------------------------------------
+
+Blocks: 
+
+Blocks is the group of one or more statements enclosed in braces.
+A block begins with an opening braces and ends with the cosing curley braces,
+. inside the blocks there can be nested statments. 
+
+-> Blocks are generally used to group several statements so they can be 
+used upon diffrent situations.
+
+-> two types of blocks.
+
+1. static block
+2. non-static blocks.
+
+
+clas test{
+    public static void main(String [] args){
+        // static main method.
+    }
+    static{
+        // static block
+    }
+
+    public void method_name(){
+        // non static block.
+    }
+    {
+        // non static block.
+    }
+}
+
+1. class loading among with state members.
+2. static block execution,
+3.Begins From Main
+4.object creation in heap memory.
+5. non static members loading into the object.
+6. non static block execution.
+7. Constructor call.
+
+firs the static method executes and then non static methods will executed.
+
+-> a class can contain any number of static blocks and non static blocks
+
+
+difference betewwn the blocks and methods
+----------------------------------------------
+
+blocks 
+--------
+>> it doesnot have any return type.
+>> executes automatically
+>> does not have any name.
+
+methods
+--------
+>> Methods have some name
+>> it will have some return type.
+>> must be call explicitly.
+
+
+
+
+Constructor
+------------
+
+Constructor is the special Member functions of the class which has name same
+as the className.
+>> constructor is used to initilize the object.
+
+>> constructor is called automatically when the object of the class is created, it is a runtime activity.
+
+
+>> Constructor dont have any return type.
+>> in java , every class will have either defalut constructor or user defined 
+constructor but not both.
+
+>> user defined constructor can be no arguement or arguement.
+where the defalut constructor is always no argument.
+
+syntax :
+
+<acceess__modifier> className(<arguement >  -> optional){
+    // code
+}
+
+acceess__modifier -> is optional.
+
+class test{
+    test(){ // user defined no argument constructor.
+        // code
+    } 
+}
+new test() -> call the constructor by crating object of the class.
+
+
+class Demo{
+    // code
+}
+
+new Demo(); // default constructor assigned by JVM.
+
+>> Not All no argument constructor are default constructor. 
+
+parameterized constructor or constructor with argument
+-------------------------------------------------------
+
+class test{
+    static int x;
+    static int y;
+    public test(int x , int y){ // parameterized constructor
+        this.x = x;
+        this.y = y;
+    }
+    Public static void main(String [] args){
+        test a = new test(20, 30);
+        a.x; // 20;
+        a.y;//30
+    }
+}
+
+Constructor Overloading
+------------------------
+
+Writing multiple constructor with different length of argument
+. type of argument and order of occurance of arguments is known as
+Constructor Overloading.
+
+well , while programming , writing multiple constructor with the same name and different in length of
+agruemnt and type of arguement and order of occurence of argueent. is calld constructor Overloading.
+
+
+
+example:
+
+calss test{
+    int x;
+    double y;
+    test(){
+        x = 0;
+        y = 0.0;
+    }
+    test(int x){
+        this.x = x;
+    }
+    test(double y){
+        this.y  = y;
+    }
+    test(double y , int x){
+        this.x = x;
+        this.y = y;
+    }
+}
+
+new test();
+new test(10);
+new test(10.34);
+new test(10, 2.34);
+
+new test(10 , 20, 30)// wrong. argument length mismatch.
+
+>> constructor does not accept any return type, if we give a return type
+the constructor becomes the method , so to execute the method we habe to call
+it explicitly.
+
+>> Constructor does not accept any access Modifiers, that is constructor
+can not be satic or final or abstract or synchronized.
+
+
+
+
+>> When to go for argument constructor ? explain with example ?? 
+since the constructor are meant to insitilize the object, so
+If we want to initialize fields of the class with your own values,
+then we can go for a parameterized constructor.
+
+in other hand, if we dont want any data members of this class explicitly with
+own rules then we choose the non parameterized constructor.
+
+class test{
+    static int a;
+    static int b;
+
+    test(int a , int b){
+        this.a = a;
+        this.b = b;
+    }
+
+    int sum(){
+        return a + b;
+    }
+
+    public sataic void main(String [] args){
+        test t = new test(10 , 20);
+        t.sum(); // return the sum // 30
+    }
+}
+
+
+
+Advantages of Constructor overloading: 
+1. constructor overloading  helps to initialize multiple object and it definately increase
+usability of of code and Maintainience.
+2. one of the biggest Advantages of the constructor overloading is flexibility which allows
+to create the object in a differnt way.
+
+use of this() keyword in constructor overloading:
+----------------------------------------------------
+>> We can use the this() keyword inside the constructor which can be used to invoke the 
+other constructor of the same class.
+>> example
+class test{
+    Static String name;
+    static int age;
+    state String gender;
+
+    test(int age){
+        this.gender = gender;
+
+    }
+    test(String gender, int age , int name){
+        this("male"); // calling the constructor within the same class 
+        this.age= age;
+        this.name = name;
+    }
+}
+
+test t = new test("female" , 23, "maria");
+t.gender // female
+t.name // maria
+t.age // 23
+
+
+
+
+// we can acheive the more flexibility inside the code and increase the performance of the code.
+
+
+
+// what happens when we create an object in series.
+
+since the object creation is an runtime activity , so when the object is created using new() keyword, 
+the object is created at the heap area or memory and all the non static data members are loaded into
+that object
+>> if the the class has no user defined constructor then the complier assigned the defalut constructor,
+and if there is an constructor of user defined type then the suitable constructor will get invoked.
+
+>> and based on the instructons the execution of the non staic block start.
+
+example:
+
+class test{
+    // no constructor present so defalut constructor will assigned while executing the program.
+    public int sum(int a, int b){
+        return a + b;
+    }
+
+    public static void main(String[] args){
+        test t = new test(); // creating new object of class test and the a is refered to object.
+        a.sum(10 , 20); // 30
+    }
+}
+
+
+t -> reference variable ----------> (heap_area(object_(int sum(int a , int b){return a + b})));
+
+
+t is the reference variable refering to the current object of that class.
+
+
+
+
+
+
+
+Method Overloading
+-------------------
+
+>> if we want to perfrom one task in multiple way then we will go for method
+overloading, or if want to change the task itlelf then we can go gor method
+overriding.
+
+
+>> Writing multiple methods with the same name but with the differnt signature is
+is called method overloading.
+The signature includes the length of the argument , type of the argument & order
+or occurance of the arguments.
+
+>> both the satatic and non  static methods can be overloaded.
+
+------------------------------------------------
+Q. methods of oberloading.
+
+
+example:
+
+overloading static method:
+
+class test{
+    public static int print(){
+        return 0;
+    }
+    public static void print(int arg){
+        return arg;
+    }
+    public static void print(double arg1 , int arg2){
+        return arg2;
+    }
+
+    public static void main(String [] args){
+        test.print();  // return 0
+        tst.print(3);  // return 3
+        test.print(10.00, 34); // return 34
+    }
+}
+
+
+>> Advantages of method overloading
+------------------------------------
+
+1. can acheive more flexibility in the code & increase the usability of code.
+2. can perform multiple task with same method name.
+3. reduces the complexity of end user, and there is no need to rememeber many
+individual  methods.
+
+Q. cal we overload main method?
+
+ans: 
+
+Yes, we can overload the main method.
+
+class Main{
+    public static void main(String[] args) { // main method
+        for(String words : args){
+            System.out.print(words);
+        }
+    }
+    public static void main(int a , double b) { // main method
+        System.out.println(a + " " + b);
+    }
+}
+
+class test{
+    public static void main(String[] args) {
+        Main.main(10, 20.00);
+        String[] s = {"sundar", "Sharma"};
+        Main.main(s);
+    }
+}
+
+-----------------------------------------------
+Object:
+
+object is the real time entity , runtime entity and it has its state and behaviour, 
+in the sense , the state represent the charecterstics of the object and the behaviour 
+represent the functions of the object.
+
+class pen{
+    String name;
+    String Brand;
+    String color;
+    int price;
+    pen(String name , String Brand, String color , int price){
+        // code
+    }
+
+    public static void main(String[] args){
+        pen p = new pen("iball" , "tecno" , "black" , 12)
+
+        p.name // iball
+        p.brand// techno
+        p.color // black 
+        p.price // 12
+
+    }
+}
+
+
+Class :
+--------
+
+class is the java defination Block wehich is used to define the state and behaviour 
+of an object.
+in class state represent the charecterstics of an object where behaviour represent the
+functionality of an object.
+
+>> When we create multiple objects of a class , all the objects have some states
+behaviour but difference in values.
+
+Class
+-------
+
+class contain
+>> Data meembers and member functions (static and non static);
+>> constructors
+
+
+Student
+name : string
+id : int
+marks: double
+
+String(String , int double)
+getname() : string
+getId() : int
+setMarks() : double
+
+clas diagram
+----------------
+
+
+Inheritence
+--------------
+-------------------------
+>> Inheritence in java is the mechanism in which one object aquires all the
+properties if a parent object.
+
+
+
+single level inhetitence:
+
+when the subclass inherites all the properties of the the parent class or super classt
+then it is known as single level inheritence.
+
+>> there will be single super class and single sub class.
+
+
+class test{
+    static int x = 10;
+    void methid1(){
+        // some code
+    }
+}
+class test1 extends test{
+    void method2(){
+        // some code
+    }
+}
+
+class Main{
+    public static void main(String[] , args){
+        test1 t = new test1();
+        t.method2(); // some output
+        t.method1(); // some output
+        t.x; // 10
+    }
+}
+
+>> in this example, the test1 caass inherites all the properties of its
+parent class test. 
+
+>> then after creating the object of the test1 class , we can easilly access
+the propertis of class test.
+
+where method1(), and x are the properties of the super class.
+
+
+-----------------------
+Multilevel inheritence
+-----------------------
+
+>> in java if there is the chaining of inheritence , then the type of the inheritence 
+is known as multilevel inheritence.In the multilevel inheritence there will be one super class
+and multiple sub class which inhertits the properties from the super class.
+
+class X{
+    int a = 10;
+    void m1(){
+        // code
+    }
+}
+class Y extends X{
+    int b = 20;
+    void m2(){
+        // code
+    }
+}
+class Z extends Y{
+    int c = 12;
+    void m3(){
+        // code
+    }
+}
+
+>> X x = new X();
+x.a // 10;
+x.m1();
+-----------
+Y y = new Y();
+y.b = 20;
+y.m2();
+y.a;// 10
+y.m1();
+
+--------------
+Z z = new Z();
+z.c; // 12;
+z.m3()// method call
+Z.b = 20;
+Z.m2();
+
+
+3. Multiple Inheritence
+
+>> in this type of inheritence a subclas will have more than one super class
+then it is known as multiple inherittence.
+
+>> this type of inhetitence is not allowded in java.
+
+Not allowed in java Why? => 
+>> Since java is simple programming languages and inhetitence is best known as
+reusability, while implementing the multiple inheritence , it creates an ambiguity
+so to reduce the complexity and simplyfy the language multiple inhetitence is not
+aallowed in java.
+
+
+
+
+
+4. Hirerarcial inheritence
+
+>> It is such type of inhetitence where there will be only one super class and multiple
+subclasses which inherties the properties of the super class.
+
+class Parent{
+    int a = 10;
+    void m1(){
+        // code
+    }
+}
+
+class subclass1 extends Parent{
+    int b = 13;
+    void m2(){
+        // code
+    }
+}
+
+class subclass2 extends Parent{
+    int c = 34;
+    void m3(){
+        // code
+    }
+}
+
+subclass2 s2 = new subclass2();
+s2.c // 34
+s2.m3();
+s2.a // 10
+s2.m1()//
+
+subclass1 s1 = new subclass1();
+s1.b // 13
+s1.m2();
+s1.a // 10
+s1.m1()//
+
+
+>> in java every class is a subclass of object class, 
+in other words object class is the supermost class in the entire
+java Hirerarchy.
+
+>> object clas is present in the java.lang.package 
+& which is default package in java.
+
+class A (extends object) /// written by the compiler{
+
+}
+
+here Class A is the subclass of obejct class.
+
+>> if we declare the class as a final then we can not inherit the properties form 
+the such classes , or we can say that the final class will not have sub class but it can have
+super class.
+
+caass A{ // super_class
+    // code
+}
+
+final class test extends A{ // final sub class of class A
+    // code
+}
+
+class X estends test{ // not allowdee.
+
+}
+
+>> if the class has nothing on it, it doesnot mean that the class is empty,
+it has the default constructor properties of the object class.
+
+>> once we inherit a class from another class , all the properties from that class
+will get inherited except the constructor and private members.
+
+
+--------------------------------------------------------------------
+
+this.keyword
+
+
+>> In java to access the non sataic data members we have to create an object of 
+that class, through which we are invoking a method known as current object.
+>> and the this keyword is used to refer that paricular current object.
+>> this keyword will refer onlu one object at once.
+>> we need to use this keyword explicitly when the local variable have the 
+same name as the insatnce variable.
+
+class test{
+    int x;  -- (instatnce varaible)
+    int y;  ==
+    test(int x , int y){  // argument constructor 
+        this.x=x;  x-> local variable
+        this.y=y;
+    }
+
+    public void print(){
+        x = 100; // here x is local variable;
+        sop(x); // 100
+        sop(this.x)// 10
+        sop(this.y)// 20
+    }
+}
+
+test t1 = new test(10,20);
+t1.print();
+
+-------------
+Super keyword
+---------------
+
+1. it is the keyword which is used to refer the super class properties from 
+the sub class.
+
+2. the super keyword must be used either inside the non Static
+method or the constructor.
+>> can not used inside a static method.
+
+class parent{
+    String name = "sundar";
+    String age = 23;
+    int id = 101;
+    public void print(){
+        sop(name);
+        sop(age);
+        sop(id);
+    }
+}
+
+class child extends Parent{
+    String name = "kiran";
+    String age = 20;
+    ind id  = 102;
+    public void display(){
+        sop(name);
+        sop(age);
+        sop(id);
+        super.print(); // super keyword allows to access the properties of the
+                       // super class.
+    }
+}
+
+chile c = new child();
+c.display();
+
+op: 
+
+kiran
+20
+102
+sundar
+23
+101
+
+>> Advantages of the super keyword.
+
+1. reduces the reusability of the code and increase the performance of the
+source code.
+2. Provides the clear strucute and better understanding of relationship between
+super class and the child class.
+
+Constructor calling
+----------------------
+
+
+>> Calling one constructor from another constructor of the same class is known
+as constructor calling.
+>> the constructor calling statement must be the first statement in the constructor body.otherwise it gives an
+error.
+>> from one constructor at most one constructor can be called.
+>> Recursive constructor invocation is not allowed. 
+>> once we call the constructor for one object then we can not call the same constructor
+for same obejct.
+
+class test{
+    tsst(){ // 1
+        test(10);
+        //code
+    }
+    test(int a){ // 2
+        test(10, 20.00);
+        // code
+    }
+    test(int a, double b){//3
+        // code;
+    }
+}
+
+new test();
+
+Advantages: constructor calling helps us to invoke all the constructor
+by creating a single object.
+
+
+Constructor chaining
+---------------------
+
+>> It is the process of calling superclass constructor from the subclass
+is known as constructor chaining.
+
+>> constructor chaining can be done either explicitly or implicitly.
+
+>> Implicit constructor chaining takes place when the super class has no
+argument constructor where as explicit constructor chaining takes place when
+the super class has the argument constructor.
+
+Advantages:
+-----------
+constructor chaining helps us to initialize the data members of the super class.
+
+--------------------------
+class A{
+    A(){
+        this(23);
+        System.out.println("in class A - no argument cnst");
+    }
+    A(int arg){
+        System.out.println("in class A- int arg --const");
+    }
+}
+class B extends A{
+    B(int a , int b){
+        System.out.println("in B - class int , int arg- const");
+    }
+}
+class C extends B{
+    C(){
+        super(10, 20);
+        System.out.println("in c- class No argument const");
+    }
+}
+class D extends C{
+    D(){
+        System.out.println("in class D no - arg const");
+    }
+}
+class test{
+    public static void main(String[] args) {
+        new D();
+    }
+}
+
+---------------------------------------
+
+this , super
+>> this keyword is used to refer the current object.
+>> super is used to refer the properties of super class.
+
+>> this , super can be used either inside the constructor or non static method.
+
+>> they can be used together.
+
+
+this(), super()
+>> this() is used in constructor calling.
+>> super is used in constructor chaining.
+>> thise should be used inside constructor only.
+>> should be used as first statemtt inside the constructor body.
+>> can not use together.
+
+
+>> Java doesnot supprot the concept of multiple inheritence because java is 
+simple proframmig language and inhetitence is known for inheriting the properties
+from the child class to the parent class but 
+in case of multiple inheritence , one sub class will have an multiple super class,
+so while creating object of the class and invoking the constructor of the super
+classs, this creates an ambiguity,so to reduce the complexity and simplyfy the language multiple inhetitence is not
+supproted in java.
+
+
+
+
+>> first statement indside the defalut constructor must be super class.
+
+otherwise ceate
+
+
+>> diamond ring problem
+---------------------------
+
+
+

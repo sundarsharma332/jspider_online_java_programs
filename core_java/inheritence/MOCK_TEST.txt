@@ -1,0 +1,629 @@
+Q1. What is class in  java & write the class templates? 
+
+>> Class is the group of Onject which have common properties , it kind of like blueprint
+or template frim which the objects are created.
+>> In java , to crate a class we use the keyword class , which is reserved keyword in java,
+
+class className{
+    // data_members
+    // methods
+}
+
+Q2. What is object in java ? 
+
+>> object is basically a real time entity, runtime entity, or an instatnce
+of a class which has its state and behaviour.
+state can be refered as data_members and behaviour can be refered as methods.
+
+>> there are three ways of initilizing the object. 
+1. by using reference variable 
+2. By using method
+3. by using constructor.
+
+>by using reference variable, 
+lets take one example , 
+
+class Student{
+    public static int id;
+    public staic String name;
+
+}
+
+class Main{
+    public staic void main(String [] args){
+        Student st = new Student(); // st is a reference variable.
+        st.name = "sundar";
+        st.id = "1234"; // initilizing object via reference variable.
+    }
+}
+
+>by using constructor;
+lets take one example , 
+
+class Student{
+    public static int id;
+    public staic String name;
+    Student(int id , String name){
+        this.id = id;
+        this.name = name;
+    }
+}
+
+class Main{
+    public staic void main(String [] args){
+        Student st = new Student(234, "sundar"); // st is a reference variable.
+        // Student() is the parameterized constructor.
+    }
+}
+
+
+>>by using methods;
+lets take one example , 
+
+class Student{
+    public static int id;
+    public staic String name;
+
+    public void initilize_Record(int id_ , String name_){
+        this.id = id_;
+        this.name = name_;
+    }
+}
+
+class Main{
+    public staic void main(String [] args){
+        Student st = new Student();
+        st.initilize_Record(123, "sundar");
+    }
+}
+>> While creating the object, object gets gets the memory in the heap memory area , the reference
+variable refers to the object allocated in hte heap memory area.here st is the reference variable which is stored
+in the stack memory and that refers to the objects allocated memory.
+
+
+Q3. What is byte code file? How many
+ byte code files will be generated after 
+ compiling source file?
+
+ ans : The class file , object file and the exe file generated after the
+ succssfull compilation of the java program is called the byte code file.
+
+ program.java
+ javac program.java
+
+ here javac is the Compiler for the java and after the compilation of
+ the java file , there will be additional class file called
+
+ >>program.class , is call the bytecode
+ >> Bytecode generally a instructons set for the java virtual Machine.
+ with the help of byte code file we can acheive the platrorm independence
+ in java.
+
+
+ After the succssfull compilation of the java program , the byte code will be
+ generated and then the bytecode is now ready to seve to the java virtual Machine
+ or bassically an execution of a progarm we call it as , 
+
+ platrorm independence java --> Means the execution of java program is not strictly
+ limited to one platrorm or call it in operating system. if the system have the basic java
+ installation or by means it has the JVM then we can execuete java program in any platform.\
+
+4 . What will be the name of the bytecode file ???
+
+>> the name of the bytecode file will be same name as className and then the extensioons 
+might be .classs.
+
+5. Command used to compile and execute the java progarm. ?? 
+
+Progarm : Hello.java
+
+>> javac Hello.java
+>> java Hello 
+
+<<< here the javac is the compiler.  first line is used to compile the java program
+if there are any error it will trhrow an error in the console ortherwise the cursor just
+move down and we can make use of another command 
+java Hello // which is basically a execution of the program.
+
+5. Can I declare the local variable  as static ?? 
+
+>> No we cant , The varaiable which has its scope inside the one particular
+method only or inside the curley braces is called the local variable, so we can not declare the local 
+variable as the static, it will throw an Compilation Error, by saying Illegeal Start of an expressoon, only final is alowed.
+
+
+6. Does Java Allows global variable ?? 
+
+>> Java Does not support the concept of Global variable implicitly ,
+>> Global varaiable are those varaiable that can be accessed from all the classes,
+
+we need to craete a class and global variables can be part of this class, 
+can use static variable to create a global variable since static varaiable belong to class and it can be accessed
+across all instatnce of the class.
+
+7. How Many types of variable does java supports ?? 
+
+>>  variable is the container which holds the value when progarm is executed.
+A variable is assigned with the data type. and the value of the variable can be chanegd.
+
+varaiable is simply the name of the memory location: 
+>> There are 3 types of variable in java 
+1. local variable
+
+>> local variable are declared inside the methods , an local variable cannot be declare as static.
+
+>> int sum = 50;
+   // here sum is the variable and the value assigned to it is 50 , the data type is integer. 
+
+
+2. instatnce variable
+
+>> Instance variables are declared in a class, but outside a method, constructor or any block.
+>> When instance variable is declared in a class these varaiable are created when an object of the 
+class is created and destryed when the object is destryed.
+
+>> initilizion of the instance varaiable is not mandatory , its defalut vakue is 0 for int , null for String
+and empty for the char and false for the boolean;
+
+class A {
+    public int a = 10; // insatnce variable
+    public static void main(String [] args){
+        A obj = new A();
+        System.out.println(obj.a); // 10
+    }
+}
+
+
+3. static varaiable.
+>> static varaiable are also known as the class variables.
+
+>> static varaiable are the varaiable which are declare inside the class outside the constructor or methods,
+for the static variable it is mandatory to use the static keyword at the begening of the datatype.
+
+>> static varaiable are created at the statrt of execution of the program and destryed automatically when
+execution ends.
+
+>> static variable can be acessed with the className or with the object of the class Name.
+
+public class test {
+    static int x = 59;
+    public static void main(String[] args) {
+        System.out.println(test.x);
+        
+    } 
+}
+
+8. How to access static & non static members explain with an example. 
+
+>> accessing static data members
+1. by using className if the main method is in the same class otherwise we have to create the object of the class to acceess
+the data members and the methods of the another class.
+2. by creating object of the className
+
+
+>> here we are trying to access the proporties of the class A , from the main methhod which is in same class, 
+we can directly call it using clas Name.
+
+public class test {
+    static int x = 59;
+    public static void print(){
+        // code
+    }
+    public static void main(String[] args) {
+        System.out.println(test.x);
+        test.print(); // access the print method.
+        
+    } 
+}
+
+>> if we want to acces the proporties of anotehr class then we have to crate the object of another class 
+and then through this object we can access the data members of anoter class.
+
+example: 
+
+class A{
+    static int x = 10; // static variable
+    public int y = 34; // instatnce varible
+
+    public void print(){
+        System.out.println("print method");
+    }
+
+    public static int method_name(){
+        return 1;
+    }
+}
+
+class test {
+        public static void main(String[] args) {
+        A obj = new A();
+        System.out.println(obj.x);
+        System.out.println(obj.y);
+        obj.print();
+        obj.method_name();
+    } 
+}
+
+
+Q. When to declare data members  as static and non static ?? 
+
+
+
+>> static can be accessed in static members as well as non static members functions.
+& and static variable acts as the global variable, and static variable occupies less space in memory
+because the memory allocation happens once when the object is created.
+
+>> non static data members can not be acessed within static data member functions , and non static variable 
+are specefic to instatnce object in which they are created , a non static varaiable may occupy more space 
+since the memory allocation happen in run time.
+
+
+
+public class JavaTester {
+   public int counter = 0; // non staic varaiable
+   public static int staticCounter = 0; // static variable.
+   public JavaTester(){
+      counter++;
+      staticCounter++;
+   }
+   public static void main(String args[]) {
+      JavaTester tester = new JavaTester();
+      JavaTester tester1 = new JavaTester();
+      JavaTester tester2 = new JavaTester();
+      System.out.println("Counter: " + tester2.counter);
+      System.out.println("Static Counter: " + tester2.staticCounter);
+   }
+}
+
+
+Output
+-----------
+Counter: 1
+Static Counter: 3
+
+
+to decide when to declare static and non static data members
+------------------------------------------------------------
+
+if we want to represent the individual information like name , id
+phone number , marks then they must be declared as non static.
+
+>> if we want to represent the common information like city branch,
+college name , then they must declared as static.
+
+>> the memory allocation for the static variable is less as compared to
+non static data members.
+
+
+Blocks
+--------
+
+1. what is block and how many blocks are available in java? 
+
+>> Block is the group of several statmemts , can be single or nested state
+ments.
+in java there are two types of blocks 
+> static block 
+> non sttaic block
+
+2. diffrece between the block and the method.
+>> well, the first the block doesnot have any specefic name while the method must have, 
+and the block does not have any return type and method must have any return type, and Blocks are executed
+automatically while to execute the method we have to call it explicitly.
+
+3. When does the Static blocl will Execute ? 
+ans >> The static block will execute at the time of class Loading.
+
+4. When the non static Block will get executed ? 
+
+ans : the non static block will execuete at the time of object cration, after the execution
+of static blocks.
+
+5. How many times the satic block will execute?
+
+>> Since the class Loading happens only once, the execution of the static block
+happens only once.
+
+6. How Many times the non static block will get execute ?? 
+
+>> the execution  times is strictly depends upon the number of object being created
+of the class.
+
+7. Can i initilize static data members inside non static block? 
+
+ans : Yes , we can use.
+
+
+8. can i initilize non static mem inside static block ?
+
+// no we cant , it gives the compilation error.
+
+
+
+constructor:
+------------
+
+1. What is constructor ? & why it is used for ? 
+
+>> Constructor is special member functions which has the same name as the class.
+in any programming languages there are Three types of constructors, they are parameterized constructor
+which accepts some set of arguments and non-parameterized constructor which does not accept any argument
+and the one which is defalut constructor, which is added by the java compiler at the time of object creation.
+>> the constructor is used to initialize the data members to the object.
+
+2. When constructor will be executed? explain
+>> Since the constructor wil get invoked at the time of object creation , and as we know the object
+creation is the runtime activity, so when we ceate an instatce of an object then the constructor will be called.
+
+3.When to go for No argument Constructor ? Explain with an example ? 
+
+>> Since the constructor are basically used to initialize the object, if we want
+to initialize the feilds of the class explicitly with custom rules then we can use the agruemnt constructor.
+
+if we take an example if student details , 
+
+class student{
+    static int id;
+    static String name;
+    Staitc double marks;
+    // argument constructor or parameterized constructor
+    student(int id , string name, double marks){
+        
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+}
+
+>> and if we does not want any data members of that class explicitly with own rules then we can
+choose the non parameterized constructor.
+
+class test{
+    static int id;
+    test(){
+        id = 10;
+    }
+    void print(){
+        System.out.println(id);
+    }
+    public static void main(String[] args) {
+        test t = new test();
+        t.print();
+    }
+}
+
+3. Write a program to demonestrate the constructor oberloading?
+what are its advantages.
+
+ans : Constructor overloading is process of writing multiple constructor
+with different signatures.signature means the difference in the argument
+length, type of argument length, and order and occurance of the argument.
+
+>> advantages if constructor oberloading
+---------------------------------------
+1. the major advantages of the constructor oberloading is the flexibility, which allows 
+us to create and initialize the object in our own way and increase the usability
+of the code.
+
+
+class student{
+    sttaic String name;
+    static int age;
+    static double marks;
+    static string gender;
+    
+    student(){
+        // code
+        System.out.println("empty constructor");
+    }
+    student(String name){
+        this.name = name;
+    }
+
+    student(int age, double marks , string gender, String name){
+        this(name);
+        this.age = age;
+        this.marks = marks;;
+        this.gender = gender;
+    }
+
+    void print(){
+        sop(name);
+        sop(age);;
+        sop(marks);
+        sop(gender);
+    }
+
+    public static void main(String [] args){
+        student s = new student();
+        s.print(); 
+    }
+
+}
+
+Q. Does the constructor allow the return type ? 
+
+>> No , we cannot have return type for the constructor , if we add a return type
+to the constructor it automatically becomes the method, and for method call we have to 
+do it explicitly by creating an object of that class.
+
+6. can constructor be sattic ? 
+
+>> No, the constructor can not be static.
+
+
+7. can constructor be final? 
+
+>> No , constructor can not be final. 
+
+8. What is the access Modifiers accepted in java ? 
+
+>> Constructor does not allow aby Modifiers, so constructor can not
+be static , final abstract or synchronized.
+
+9.What acceess Modifiers are accpeted for the constructor? 
+
+>> In java , all the constructor are public by nature, so we cannot define the constructor
+along with access Modifiers explicitly.
+
+
+10. what happens when we create an object explain ?
+
+step 1: after the succssfull compilation of the source code , in the runtime 
+the object is created using new() keyword.
+step 2: the obje is created and sotred at the memory called heap area. and all
+the non sattic blocks will loaded into the object.
+step 3: and we call the non sataic block with the reference of the object and 
+execute to get desire output.
+
+
+Method overloading
+--------------------
+Q. What is method overloading ?? 
+
+>> Method overloading is the process of writting multiple methods with different
+signatures.
+>> signature means difference in length of the argument, type of the argument 
+and the order and occurance of the argument.
+
+>> Like the constructor oberloading Method overloading also incrase the flexibility
+of the code and increase the performamce of end user and we dont have to use multiple
+method to perform some tasks.
+
+Q. Can we overload the static methods ? Explain with an example ??
+
+ans: yes we can overload both the static and non static methods.
+
+static method overloading
+
+class test{
+    static int sum(int a , int b){
+        return a + b;
+    }
+
+    static double sum(int a , int  b , double c){
+        return a + b + c;
+    }
+
+    static double sum(double a , Double b){
+        return a + b;
+    }
+    public static void main(String [] args){
+        System.out.println(test.sum(10, 20));
+        System.out.println(test.sum(10.57, 78.94));
+        System.out.println(test.sum(10,20,40.57));
+    }
+}
+
+Q. non sattic overloading
+-------------------------
+
+class test{
+    public int sum(int a , int b){
+        return a + b;
+    }
+
+     public double sum(int a , int  b , double c){
+        return a + b + c;
+    }
+
+    public double sum(double a , Double b){
+        return a + b;
+    }
+    public static void main(String [] args){
+        test t  = new test();
+        System.out.println(t.sum(10, 20));
+        System.out.println(t.sum(10.57, 78.94));
+        System.out.println(t.sum(10,20,40.57));
+    }
+}
+
+
+
+Q. Can we overload the main method ?? code
+
+>> in java we can overload the main method, 
+
+class Main{
+
+    public static void main(String[] args){
+        for(String s : args){
+            System.out.print(s + " ");
+        }
+    }
+
+    public static void main(String[] args , int k){
+        for(String x : args){
+            int num = Integer.parseInt(x);
+            if(num % k == 0){
+                System.out.println("divisible by k");
+            }
+        }
+    }
+}
+
+class test{
+    public static void main(String[] args) {
+        String [] st = {"10", "20" ,"30"};
+        Main.main(st);
+        Main.main(st, 10);
+    }
+}
+
+INHERITENCE
+--------------
+Q. What is inheritence and what are its advantges ?? 
+
+>> inheritence is the processing of accessig properties of super class
+from the sub class. 
+>> the class from which the properties are inherited is called super class
+and where the properties are inherited is called the sub class.
+>> in java any number of subclass can be made.
+>> the extends keyword is used to estaablish the relationship between two class.
+
+
+syntax: 
+
+class super_class{
+    satic int x = 10;
+}
+class sub_class extends super_class{
+    // here i can access the super_class properties.
+}
+
+
+>> The major advantages of the inheritence is that we can access the properties 
+of super class to the sub class.
+>> The concept of inhertence reduces the reusability of code and increase the flexibility
+of the source code.
+
+
+
+Q. Explain the types of Inheritence ?? 
+
+1. single line Inheritence
+2. Multilevel inheritence
+3. multiple inheritence
+4. Hirerarcial inheritence
+5. Hybrid inheritence
+
+single level inheritence:
+-------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

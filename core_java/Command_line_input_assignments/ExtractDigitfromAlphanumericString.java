@@ -30,12 +30,3 @@ class ExtractDigitfromAlphanumericString
          return false;
 	}
 }
-
-
-input:
->> javac ExtractDigitfromAlphanumericString.java
->> java ExtractDigitfromAlphanumericString hello123 34sundar32 jspider234
-
-output: 
-
-123 3432 234

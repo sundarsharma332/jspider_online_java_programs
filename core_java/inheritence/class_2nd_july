@@ -1,0 +1,48 @@
+case 3 : Two properties will not be inherited to sub 
+class
+1. constructor
+2.private members
+
+class A{
+    public int x  = 10;
+    private double y = 10.00;
+    private static void print(){
+        // code
+    }
+
+    A(){
+        // code
+    }
+}
+
+public static view display(){
+
+}
+
+public static view(){
+    // code
+}
+
+-----------
+
+class B extends A{
+    // what are the proporties we can extend.
+    >> public int x, display(), view();
+}
+
+
+~~~ Does main method get's inherited? 
+>> yes , it is static and public , 
+explanation,
+
+class A{
+    public static void main(String[] args){
+        sop("hi");
+    }
+}
+
+class B extends A{
+
+}
+
+// output as hi 
