@@ -601,7 +601,7 @@ clas diagram
 Inheritence
 --------------
 -------------------------
->> Inheritence in java is the mechanism in which one object aquires all the
+>> Inheritence in java is the mehanism in which one object aquires all the
 properties if a parent object.
 
 

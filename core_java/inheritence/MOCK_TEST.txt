@@ -1,5 +1,139 @@
+
+basic java
+----------
+what is java ? 
+>> java is a high level, robust , secure and object oriented
+programming language.it was developed by sum microsystem in the year
+of 1995.and later it was aquired by the Oracle. The java is used to
+int the sector of  Standalone applications,web applications,Mobile applications, 
+and enterprise applications.
+
+
+why java is called object oriented programming language ?
+
+>>  As the term object oriented programming or oops refers to the language 
+that uses the objects in the programming, and the object oriented programming aims to
+implement the real world entities like inheritence , abstractions and encapsultion,
+so it is impossible to write a java source code without objects, so that the java is 
+refered as object oriented programming language.
+
+Why java is called platform independent? 
+
+>> java is platrorm independent beccause the bytecode file or class file which is 
+genereated after the succssfull compilation of java source code can run in any
+operating system in the presence of java virtual machine, it means the system must have
+the basic java installation.it is because the byte code is a non executable code, to 
+execute this code we heed to have a java interpreter , which is provided by the JVM.
+
+
+
+java virtual Machine
+--------------------
+
+>> it is a virtual machine, which perform the task like the machine without having any
+physical existance.
+>> the task of the jvm is to process the bytecocde file to the processor for the
+execution.
+
+
+java runtime envirounemnt
+--------------------------
+>> it is the software which is responsible for providing the necessary envirounemnt
+or resources to the jvm, so that the jvm can perform its operation without being intrupted.
+
+JIT
+-----
+>> Along with javac , JIT is an additional compiler which are responsible for]
+line by line execution of the executable file and it also responsible for converting 
+the bytecode file to configruation file.
+
+java development kit
+---------------------
+>> it is a java development kit , which is responsible for providing necessary 
+components that are required to compile and execuete the java program.
+
+>> inside jdk there  are compilers , java virtual machine and java runtime envirounemnt.
+
+
+
+Keywords
+--------------
+
+keywords are the set of predefined reserved words defined by the programmaing
+language.
+>> every programming languages have its own set if keywords.
+and in jvaa all the keywords are in lowercase.
+some of the examples of the keyword are: static , public, final, double , int etc.
+
+Identifiers
+-----------
+>> Identifiers are the keywords that are used by the programmers to identify
+the elements in the program.
+>> The identfiers can be classname, variables, mathodname and package name.
+
+varaiables
+----------
+
+>> variables are the identfiers, variables are used to hold some values, and the identfiers
+is used to identify the memory location of the stroed value.
+
+datatype variable_name;
+int x;
+
+Initilization -> int x = 10;
+
+data type 
+
+1. primitive data types
+2. non primitive datta types
+
+primitive -> numeric and non numeric
+numeric -> integer, floating point -> long ,  int , byte , short, double, float etc.
+non numeric -> char, boolean
+
+non-primitive -> class , interfaces.
+
+1 byte = 8 bits -> 2 nibble
+i nibble = 4 bits
+
+operators
+---------
+
+operators are used in java to build the expressions, or to perform the operations.
+
+type of opetartions
+-------------------
+1. relational operator -> <>, <=, >= , != , == 
+2. arethemetic operator -> +, -, *, /, %
+3. logical operator -> || , && 
+4. Bitwise operator (| , &)
+5. unary operator -> ++, --
+
+Control statements
+-------------------
+>> control stattements are used to divert the flow of executions of the program in
+java. and it can be acheived by using both the looping and branching of statements.
+
+Branching refers the use of if, else, if else, nested if and switch statements.
+and looping refers the forloop, foreach loop, while and do while  statements.
+
+Methods
+---------
+
+>> methhods are the set of instructons written by the user to perform some task.
+one of the advantages of methods over unstructured programmig is that it helps
+to acheive the code reusability and increase the modularity of the program.
+
+
 Q1. What is class in  java & write the class templates? 
 
+class is the java defination Block wehich is used to define the state and behaviour 
+of an object.
+in class state represent the charecterstics of an object where behaviour represent the
+functionality of an object.
+
+>> When we create multiple objects of a class , all the objects have some states
+behaviour but difference in values.
 >> Class is the group of Onject which have common properties , it kind of like blueprint
 or template frim which the objects are created.
 >> In java , to crate a class we use the keyword class , which is reserved keyword in java,
@@ -76,7 +210,7 @@ class Main{
         st.initilize_Record(123, "sundar");
     }
 }
->> While creating the object, object gets gets the memory in the heap memory area , the reference
+>> While creating the object, object gets created the memory in the heap memory area , the reference
 variable refers to the object allocated in hte heap memory area.here st is the reference variable which is stored
 in the stack memory and that refers to the objects allocated memory.
 
@@ -105,7 +239,7 @@ Q3. What is byte code file? How many
  or bassically an execution of a progarm we call it as , 
 
  platrorm independence java --> Means the execution of java program is not strictly
- limited to one platrorm or call it in operating system. if the system have the basic java
+ limited to one platrorm or in operating system. if the system have the basic java
  installation or by means it has the JVM then we can execuete java program in any platform.\
 
 4 . What will be the name of the bytecode file ???
@@ -245,11 +379,11 @@ class test {
 }
 
 
-Q. When to declare data members  as static and non static ?? 
+Q. When to declare data members as static and non static ?? 
 
 
 
->> static can be accessed in static members as well as non static members functions.
+>> static data members and functions can be accessed in static members as well as non static members functions.
 & and static variable acts as the global variable, and static variable occupies less space in memory
 because the memory allocation happens once when the object is created.
 
@@ -355,12 +489,11 @@ and the one which is defalut constructor, which is added by the java compiler at
 >> Since the constructor wil get invoked at the time of object creation , and as we know the object
 creation is the runtime activity, so when we ceate an instatce of an object then the constructor will be called.
 
-3.When to go for No argument Constructor ? Explain with an example ? 
+3.When to go for argument Constructor ? Explain with an example ? 
 
 >> Since the constructor are basically used to initialize the object, if we want
 to initialize the feilds of the class explicitly with custom rules then we can use the agruemnt constructor.
 
-if we take an example if student details , 
 
 class student{
     static int id;
@@ -438,7 +571,6 @@ class student{
         student s = new student();
         s.print(); 
     }
-
 }
 
 Q. Does the constructor allow the return type ? 
@@ -607,8 +739,398 @@ Q. Explain the types of Inheritence ??
 4. Hirerarcial inheritence
 5. Hybrid inheritence
 
-single level inheritence:
+Inheritence
+--------------
 -------------------------
+>> Inheritence in java is the mehanism in which one object aquires all the
+properties if a parent object.
+
+
+
+single level inhetitence:
+
+when the subclass inherites all the properties of the the parent class or super classt
+then it is known as single level inheritence.
+
+>> there will be single super class and single sub class.
+
+
+class test{
+    static int x = 10;
+    void methid1(){
+        // some code
+    }
+}
+class test1 extends test{
+    void method2(){
+        // some code
+    }
+}
+
+class Main{
+    public static void main(String[] , args){
+        test1 t = new test1();
+        t.method2(); // some output
+        t.method1(); // some output
+        t.x; // 10
+    }
+}
+
+>> in this example, the test1 caass inherites all the properties of its
+parent class test. 
+
+>> then after creating the object of the test1 class , we can easilly access
+the propertis of class test.
+
+where method1(), and x are the properties of the super class.
+
+
+-----------------------
+Multilevel inheritence
+-----------------------
+
+>> in java if there is the chaining of inheritence , then the type of the inheritence 
+is known as multilevel inheritence.In the multilevel inheritence there will be one super class
+and multiple sub class which inhertits the properties from the super class.
+
+class X{
+    int a = 10;
+    void m1(){
+        // code
+    }
+}
+class Y extends X{
+    int b = 20;
+    void m2(){
+        // code
+    }
+}
+class Z extends Y{
+    int c = 12;
+    void m3(){
+        // code
+    }
+}
+
+>> X x = new X();
+x.a // 10;
+x.m1();
+-----------
+Y y = new Y();
+y.b = 20;
+y.m2();
+y.a;// 10
+y.m1();
+
+--------------
+Z z = new Z();
+z.c; // 12;
+z.m3()// method call
+Z.b = 20;
+Z.m2();
+
+
+3. Multiple Inheritence
+
+>> in this type of inheritence a subclas will have more than one super class
+then it is known as multiple inherittence.
+
+>> this type of inhetitence is not allowded in java.
+
+Not allowed in java Why? => 
+>> Since java is simple programming languages and inhetitence is best known as
+reusability, while implementing the multiple inheritence , it creates an ambiguity
+so to reduce the complexity and simplyfy the language multiple inhetitence is not
+aallowed in java.
+
+
+
+
+
+4. Hirerarcial inheritence
+
+>> It is such type of inhetitence where there will be only one super class and multiple
+subclasses which inherties the properties of the super class.
+
+class Parent{
+    int a = 10;
+    void m1(){
+        // code
+    }
+}
+
+class subclass1 extends Parent{
+    int b = 13;
+    void m2(){
+        // code
+    }
+}
+
+class subclass2 extends Parent{
+    int c = 34;
+    void m3(){
+        // code
+    }
+}
+
+subclass2 s2 = new subclass2();
+s2.c // 34
+s2.m3();
+s2.a // 10
+s2.m1()//
+
+subclass1 s1 = new subclass1();
+s1.b // 13
+s1.m2();
+s1.a // 10
+s1.m1()//
+
+
+>> in java every class is a subclass of object class, 
+in other words object class is the supermost class in the entire
+java Hirerarchy.
+
+>> object clas is present in the java.lang.package 
+& which is default package in java.
+
+class A (extends object) /// written by the compiler{
+
+}
+
+here Class A is the subclass of obejct class.
+
+>> if we declare the class as a final then we can not inherit the properties form 
+the such classes , or we can say that the final class will not have sub class but it can have
+super class.
+
+caass A{ // super_class
+    // code
+}
+
+final class test extends A{ // final sub class of class A
+    // code
+}
+
+class X estends test{ // not allowdee.
+
+}
+
+>> if the class has nothing on it, it doesnot mean that the class is empty,
+it has the default constructor properties of the object class.
+
+>> once we inherit a class from another class , all the properties from that class
+will get inherited except the constructor and private members.
+
+
+--------------------------------------------------------------------
+
+this.keyword
+
+
+>> In java to access the non sataic data members we have to create an object of 
+that class, through which we are invoking a method known as current object.
+>> and the this keyword is used to refer that paricular current object.
+>> this keyword will refer onlu one object at once.
+>> we need to use this keyword explicitly when the local variable have the 
+same name as the insatnce variable.
+
+class test{
+    int x;  -- (instatnce varaible)
+    int y;  ==
+    test(int x , int y){  // argument constructor 
+        this.x=x;  x-> local variable
+        this.y=y;
+    }
+
+    public void print(){
+        x = 100; // here x is local variable;
+        sop(x); // 100
+        sop(this.x)// 10
+        sop(this.y)// 20
+    }
+}
+
+test t1 = new test(10,20);
+t1.print();
+
+-------------
+Super keyword
+---------------
+
+1. it is the keyword which is used to refer the super class properties from 
+the sub class.
+
+2. the super keyword must be used either inside the non Static
+method or the constructor.
+>> can not used inside a static method.
+
+class parent{
+    String name = "sundar";
+    String age = 23;
+    int id = 101;
+    public void print(){
+        sop(name);
+        sop(age);
+        sop(id);
+    }
+}
+
+class child extends Parent{
+    String name = "kiran";
+    String age = 20;
+    ind id  = 102;
+    public void display(){
+        sop(name);
+        sop(age);
+        sop(id);
+        super.print(); // super keyword allows to access the properties of the
+                       // super class.
+    }
+}
+
+chile c = new child();
+c.display();
+
+op: 
+
+kiran
+20
+102
+sundar
+23
+101
+
+>> Advantages of the super keyword.
+
+1. reduces the reusability of the code and increase the performance of the
+source code.
+2. Provides the clear strucute and better understanding of relationship between
+super class and the child class.
+
+Constructor calling
+----------------------
+
+
+>> Calling one constructor from another constructor of the same class is known
+as constructor calling.
+>> the constructor calling statement must be the first statement in the constructor body.otherwise it gives an
+error.
+>> from one constructor at most one constructor can be called.
+>> Recursive constructor invocation is not allowed. 
+>> once we call the constructor for one object then we can not call the same constructor
+for same obejct.
+
+class test{
+    tsst(){ // 1
+        test(10);
+        //code
+    }
+    test(int a){ // 2
+        test(10, 20.00);
+        // code
+    }
+    test(int a, double b){//3
+        // code;
+    }
+}
+
+new test();
+
+Advantages: constructor calling helps us to invoke all the constructor
+by creating a single object.
+
+
+Constructor chaining
+---------------------
+
+>> It is the process of calling superclass constructor from the subclass
+is known as constructor chaining.
+
+>> constructor chaining can be done either explicitly or implicitly.
+
+>> Implicit constructor chaining takes place when the super class has no
+argument constructor where as explicit constructor chaining takes place when
+the super class has the argument constructor.
+
+Advantages:
+-----------
+constructor chaining helps us to initialize the data members of the super class.
+
+--------------------------
+class A{
+    A(){
+        this(23);
+        System.out.println("in class A - no argument cnst");
+    }
+    A(int arg){
+        System.out.println("in class A- int arg --const");
+    }
+}
+class B extends A{
+    B(int a , int b){
+        System.out.println("in B - class int , int arg- const");
+    }
+}
+class C extends B{
+    C(){
+        super(10, 20);
+        System.out.println("in c- class No argument const");
+    }
+}
+class D extends C{
+    D(){
+        System.out.println("in class D no - arg const");
+    }
+}
+class test{
+    public static void main(String[] args) {
+        new D();
+    }
+}
+
+---------------------------------------
+
+this , super
+>> this keyword is used to refer the current object.
+>> super is used to refer the properties of super class.
+
+>> this , super can be used either inside the constructor or non static method.
+
+>> they can be used together.
+
+
+this(), super()
+>> this() is used in constructor calling.
+>> super is used in constructor chaining.
+>> thise should be used inside constructor only.
+>> should be used as first statemtt inside the constructor body.
+>> can not use together.
+
+
+>> Java doesnot supprot the concept of multiple inheritence because java is 
+simple proframmig language and inhetitence is known for inheriting the properties
+from the child class to the parent class but 
+in case of multiple inheritence , one sub class will have an multiple super class,
+so while creating object of the class and invoking the constructor of the super
+classs, this creates an ambiguity,so to reduce the complexity and simplyfy the language multiple inhetitence is not
+supproted in java.
+
+
+
+
+>> first statement indside the defalut constructor must be super class.
+
+otherwise ceate
+
+
+>> diamond ring problem
+---------------------------
+
+>> in java while implementing the multiple inhetitence, there occurs a situatios that a sub class is inhertiting the properties
+of both the super class , so while the constructor chaining process, if we call an constructor of an super class, it creates an ambiguity, 
+and trhow an compilation error,so that the java does not support the multiple inheritence, and  this problem is called the diamond ring problem.
+
+>> default methods and pakages.
 
 
 
