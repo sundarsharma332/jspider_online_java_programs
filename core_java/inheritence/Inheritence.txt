@@ -1,0 +1,449 @@
+
+
+INHERITENCE
+--------------
+Q. What is inheritence and what are its advantges ?? 
+
+>> inheritence is the processing of accessig properties of super class
+from the sub class. 
+>> the class from which the properties are inherited is called super class
+and where the properties are inherited is called the sub class.
+>> in java any number of subclass can be made.
+>> the extends keyword is used to estaablish the relationship between two class.
+
+
+syntax: 
+
+class super_class{
+    satic int x = 10;
+}
+class sub_class extends super_class{
+    // here i can access the super_class properties.
+}
+
+
+>> The major advantages of the inheritence is that we can access the properties 
+of super class to the sub class.
+>> The concept of inhertence reduces the reusability of code and increase the flexibility
+of the source code.
+
+
+
+Q. Explain the types of Inheritence ?? 
+
+1. single line Inheritence
+2. Multilevel inheritence
+3. multiple inheritence
+4. Hirerarcial inheritence
+5. Hybrid inheritence
+
+Inheritence
+--------------
+-------------------------
+>> Inheritence in java is the mehanism in which one object aquires all the
+properties if a parent object.
+
+
+
+single level inhetitence:
+
+when the subclass inherites all the properties of the the parent class or super classt
+then it is known as single level inheritence.
+
+>> there will be single super class and single sub class.
+
+
+class test{
+    static int x = 10;
+    void methid1(){
+        // some code
+    }
+}
+class test1 extends test{
+    void method2(){
+        // some code
+    }
+}
+
+class Main{
+    public static void main(String[] , args){
+        test1 t = new test1();
+        t.method2(); // some output
+        t.method1(); // some output
+        t.x; // 10
+    }
+}
+
+>> in this example, the test1 caass inherites all the properties of its
+parent class test. 
+
+>> then after creating the object of the test1 class , we can easilly access
+the propertis of class test.
+
+where method1(), and x are the properties of the super class.
+
+
+-----------------------
+Multilevel inheritence
+-----------------------
+
+>> in java if there is the chaining of inheritence , then the type of the inheritence 
+is known as multilevel inheritence.In the multilevel inheritence there will be one super class
+and multiple sub class which inhertits the properties from the super class.
+
+class X{
+    int a = 10;
+    void m1(){
+        // code
+    }
+}
+class Y extends X{
+    int b = 20;
+    void m2(){
+        // code
+    }
+}
+class Z extends Y{
+    int c = 12;
+    void m3(){
+        // code
+    }
+}
+
+>> X x = new X();
+x.a // 10;
+x.m1();
+-----------
+Y y = new Y();
+y.b = 20;
+y.m2();
+y.a;// 10
+y.m1();
+
+--------------
+Z z = new Z();
+z.c; // 12;
+z.m3()// method call
+Z.b = 20;
+Z.m2();
+
+
+3. Multiple Inheritence
+
+>> in this type of inheritence a subclas will have more than one super class
+then it is known as multiple inherittence.
+
+>> this type of inhetitence is not allowded in java.
+
+Not allowed in java Why? => 
+>> Since java is simple programming languages and inhetitence is best known as
+reusability, while implementing the multiple inheritence , it creates an ambiguity
+so to reduce the complexity and simplyfy the language multiple inhetitence is not
+aallowed in java.
+
+
+
+
+
+4. Hirerarcial inheritence
+
+>> It is such type of inhetitence where there will be only one super class and multiple
+subclasses which inherties the properties of the super class.
+
+class Parent{
+    int a = 10;
+    void m1(){
+        // code
+    }
+}
+
+class subclass1 extends Parent{
+    int b = 13;
+    void m2(){
+        // code
+    }
+}
+
+class subclass2 extends Parent{
+    int c = 34;
+    void m3(){
+        // code
+    }
+}
+
+subclass2 s2 = new subclass2();
+s2.c // 34
+s2.m3();
+s2.a // 10
+s2.m1()//
+
+subclass1 s1 = new subclass1();
+s1.b // 13
+s1.m2();
+s1.a // 10
+s1.m1()//
+
+
+>> in java every class is a subclass of object class, 
+in other words object class is the supermost class in the entire
+java Hirerarchy.
+
+>> object clas is present in the java.lang.package 
+& which is default package in java.
+
+class A (extends object) /// written by the compiler{
+
+}
+
+here Class A is the subclass of obejct class.
+
+>> if we declare the class as a final then we can not inherit the properties form 
+the such classes , or we can say that the final class will not have sub class but it can have
+super class.
+
+caass A{ // super_class
+    // code
+}
+
+final class test extends A{ // final sub class of class A
+    // code
+}
+
+class X estends test{ // not allowdee.
+
+}
+
+>> if the class has nothing on it, it doesnot mean that the class is empty,
+it has the default constructor properties of the object class.
+
+>> once we inherit a class from another class , all the properties from that class
+will get inherited except the constructor and private members.
+
+
+--------------------------------------------------------------------
+
+this.keyword
+
+
+>> In java to access the non sataic data members we have to create an object of 
+that class, through which we are invoking a method known as current object.
+>> and the this keyword is used to refer that paricular current object.
+>> this keyword will refer onlu one object at once.
+>> we need to use this keyword explicitly when the local variable have the 
+same name as the insatnce variable.
+
+class test{
+    int x;  -- (instatnce varaible)
+    int y;  ==
+    test(int x , int y){  // argument constructor 
+        this.x=x;  x-> local variable
+        this.y=y;
+    }
+
+    public void print(){
+        x = 100; // here x is local variable;
+        sop(x); // 100
+        sop(this.x)// 10
+        sop(this.y)// 20
+    }
+}
+
+test t1 = new test(10,20);
+t1.print();
+
+-------------
+Super keyword
+---------------
+
+1. it is the keyword which is used to refer the super class properties from 
+the sub class.
+
+2. the super keyword must be used either inside the non Static
+method or the constructor.
+>> can not used inside a static method.
+
+class parent{
+    String name = "sundar";
+    String age = 23;
+    int id = 101;
+    public void print(){
+        sop(name);
+        sop(age);
+        sop(id);
+    }
+}
+
+class child extends Parent{
+    String name = "kiran";
+    String age = 20;
+    ind id  = 102;
+    public void display(){
+        sop(name);
+        sop(age);
+        sop(id);
+        super.print(); // super keyword allows to access the properties of the
+                       // super class.
+    }
+}
+
+chile c = new child();
+c.display();
+
+op: 
+
+kiran
+20
+102
+sundar
+23
+101
+
+>> Advantages of the super keyword.
+
+1. reduces the reusability of the code and increase the performance of the
+source code.
+2. Provides the clear strucute and better understanding of relationship between
+super class and the child class.
+
+Constructor calling
+----------------------
+
+
+>> Calling one constructor from another constructor of the same class is known
+as constructor calling.
+>> the constructor calling statement must be the first statement in the constructor body.otherwise it gives an
+error.
+>> from one constructor at most one constructor can be called.
+>> Recursive constructor invocation is not allowed. 
+>> once we call the constructor for one object then we can not call the same constructor
+for same obejct.
+
+class test{
+    tsst(){ // 1
+        test(10);
+        //code
+    }
+    test(int a){ // 2
+        test(10, 20.00);
+        // code
+    }
+    test(int a, double b){//3
+        // code;
+    }
+}
+
+new test();
+
+Advantages: constructor calling helps us to invoke all the constructor
+by creating a single object.
+
+
+Constructor chaining
+---------------------
+
+>> It is the process of calling superclass constructor from the subclass
+is known as constructor chaining.
+
+>> constructor chaining can be done either explicitly or implicitly.
+
+>> Implicit constructor chaining takes place when the super class has no
+argument constructor where as explicit constructor chaining takes place when
+the super class has the argument constructor.
+
+Advantages:
+-----------
+constructor chaining helps us to initialize the data members of the super class.
+
+--------------------------
+class A{
+    A(){
+        this(23);
+        System.out.println("in class A - no argument cnst");
+    }
+    A(int arg){
+        System.out.println("in class A- int arg --const");
+    }
+}
+class B extends A{
+    B(int a , int b){
+        System.out.println("in B - class int , int arg- const");
+    }
+}
+class C extends B{
+    C(){
+        super(10, 20);
+        System.out.println("in c- class No argument const");
+    }
+}
+class D extends C{
+    D(){
+        System.out.println("in class D no - arg const");
+    }
+}
+class test{
+    public static void main(String[] args) {
+        new D();
+    }
+}
+
+---------------------------------------
+
+this , super
+>> this keyword is used to refer the current object.
+>> super is used to refer the properties of super class.
+
+>> this , super can be used either inside the constructor or non static method.
+
+>> they can be used together.
+
+
+this(), super()
+>> this() is used in constructor calling.
+>> super is used in constructor chaining.
+>> thise should be used inside constructor only.
+>> should be used as first statemtt inside the constructor body.
+>> can not use together.
+
+
+>> Java doesnot supprot the concept of multiple inheritence because java is 
+simple proframmig language and inhetitence is known for inheriting the properties
+from the child class to the parent class but 
+in case of multiple inheritence , one sub class will have an multiple super class,
+so while creating object of the class and invoking the constructor of the super
+classs, this creates an ambiguity,so to reduce the complexity and simplyfy the language multiple inhetitence is not
+supproted in java.
+
+
+
+
+>> first statement indside the defalut constructor must be super class.
+
+otherwise ceate
+
+
+>> diamond ring problem
+---------------------------
+
+>> in java while implementing the multiple inhetitence, there occurs a situatios that a sub class is inhertiting the properties
+of both the super class , so while the constructor chaining process, if we call an constructor of an super class, it creates an ambiguity, 
+and trhow an compilation error,so that the java does not support the multiple inheritence, and  this problem is called the diamond ring problem.
+
+>> default methods and pakages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

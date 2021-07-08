@@ -1,0 +1,133 @@
+constructor:
+------------
+
+1. What is constructor ? & why it is used for ? 
+
+>> Constructor is special member functions which has the same name as the class.
+in any programming languages there are Three types of constructors, they are parameterized constructor
+which accepts some set of arguments and non-parameterized constructor which does not accept any argument
+and the one which is defalut constructor, which is added by the java compiler at the time of object creation.
+>> the constructor is used to initialize the data members to the object.
+
+2. When constructor will be executed? explain
+>> Since the constructor wil get invoked at the time of object creation , and as we know the object
+creation is the runtime activity, so when we ceate an instatce of an object then the constructor will be called.
+
+3.When to go for argument Constructor ? Explain with an example ? 
+
+>> Since the constructor are basically used to initialize the object, if we want
+to initialize the feilds of the class explicitly with custom rules then we can use the agruemnt constructor.
+
+
+class student{
+    static int id;
+    static String name;
+    Staitc double marks;
+    // argument constructor or parameterized constructor
+    student(int id , string name, double marks){
+        
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+}
+
+>> and if we does not want any data members of that class explicitly with own rules then we can
+choose the non parameterized constructor.
+
+class test{
+    static int id;
+    test(){
+        id = 10;
+    }
+    void print(){
+        System.out.println(id);
+    }
+    public static void main(String[] args) {
+        test t = new test();
+        t.print();
+    }
+}
+
+3. Write a program to demonestrate the constructor oberloading?
+what are its advantages.
+
+ans : Constructor overloading is process of writing multiple constructor
+with different signatures.signature means the difference in the argument
+length, type of argument length, and order and occurance of the argument.
+
+>> advantages if constructor oberloading
+---------------------------------------
+1. the major advantages of the constructor oberloading is the flexibility, which allows 
+us to create and initialize the object in our own way and increase the usability
+of the code.
+
+
+class student{
+    sttaic String name;
+    static int age;
+    static double marks;
+    static string gender;
+    
+    student(){
+        // code
+        System.out.println("empty constructor");
+    }
+    student(String name){
+        this.name = name;
+    }
+
+    student(int age, double marks , string gender, String name){
+        this(name);
+        this.age = age;
+        this.marks = marks;;
+        this.gender = gender;
+    }
+
+    void print(){
+        sop(name);
+        sop(age);;
+        sop(marks);
+        sop(gender);
+    }
+
+    public static void main(String [] args){
+        student s = new student();
+        s.print(); 
+    }
+}
+
+Q. Does the constructor allow the return type ? 
+
+>> No , we cannot have return type for the constructor , if we add a return type
+to the constructor it automatically becomes the method, and for method call we have to 
+do it explicitly by creating an object of that class.
+
+6. can constructor be sattic ? 
+
+>> No, the constructor can not be static.
+
+
+7. can constructor be final? 
+
+>> No , constructor can not be final. 
+
+8. What is the access Modifiers accepted in java ? 
+
+>> Constructor does not allow aby Modifiers, so constructor can not
+be static , final abstract or synchronized.
+
+9.What acceess Modifiers are accpeted for the constructor? 
+
+>> In java , all the constructor are public by nature, so we cannot define the constructor
+along with access Modifiers explicitly.
+
+
+10. what happens when we create an object explain ?
+
+step 1: after the succssfull compilation of the source code , in the runtime 
+the object is created using new() keyword.
+step 2: the obje is created and sotred at the memory called heap area. and all
+the non sattic blocks will loaded into the object.
+step 3: and we call the non sataic block with the reference of the object and 
+execute to get desire output.

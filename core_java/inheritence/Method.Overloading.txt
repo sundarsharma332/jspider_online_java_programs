@@ -1,0 +1,92 @@
+Method overloading
+--------------------
+Q. What is method overloading ?? 
+
+>> Method overloading is the process of writting multiple methods with different
+signatures.
+>> signature means difference in length of the argument, type of the argument 
+and the order and occurance of the argument.
+
+>> Like the constructor oberloading Method overloading also incrase the flexibility
+of the code and increase the performamce of end user and we dont have to use multiple
+method to perform some tasks.
+
+Q. Can we overload the static methods ? Explain with an example ??
+
+ans: yes we can overload both the static and non static methods.
+
+static method overloading
+
+class test{
+    static int sum(int a , int b){
+        return a + b;
+    }
+
+    static double sum(int a , int  b , double c){
+        return a + b + c;
+    }
+
+    static double sum(double a , Double b){
+        return a + b;
+    }
+    public static void main(String [] args){
+        System.out.println(test.sum(10, 20));
+        System.out.println(test.sum(10.57, 78.94));
+        System.out.println(test.sum(10,20,40.57));
+    }
+}
+
+Q. non sattic overloading
+-------------------------
+
+class test{
+    public int sum(int a , int b){
+        return a + b;
+    }
+
+     public double sum(int a , int  b , double c){
+        return a + b + c;
+    }
+
+    public double sum(double a , Double b){
+        return a + b;
+    }
+    public static void main(String [] args){
+        test t  = new test();
+        System.out.println(t.sum(10, 20));
+        System.out.println(t.sum(10.57, 78.94));
+        System.out.println(t.sum(10,20,40.57));
+    }
+}
+
+
+
+Q. Can we overload the main method ?? code
+
+>> in java we can overload the main method, 
+
+class Main{
+
+    public static void main(String[] args){
+        for(String s : args){
+            System.out.print(s + " ");
+        }
+    }
+
+    public static void main(String[] args , int k){
+        for(String x : args){
+            int num = Integer.parseInt(x);
+            if(num % k == 0){
+                System.out.println("divisible by k");
+            }
+        }
+    }
+}
+
+class test{
+    public static void main(String[] args) {
+        String [] st = {"10", "20" ,"30"};
+        Main.main(st);
+        Main.main(st, 10);
+    }
+}

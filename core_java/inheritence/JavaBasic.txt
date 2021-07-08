@@ -1,0 +1,137 @@
+
+basic java
+----------
+what is java ? 
+>> java is a high level, robust , secure and object oriented
+programming language.it was developed by sum microsystem in the year
+of 1995.and later it was aquired by the Oracle. The java is used to
+int the sector of  Standalone applications,web applications,Mobile applications, 
+and enterprise applications.
+
+
+why java is called object oriented programming language ?
+
+>>  As the term object oriented programming or oops refers to the language 
+that uses the objects in the programming, and the object oriented programming aims to
+implement the real world entities like inheritence , abstractions and encapsultion,
+so it is impossible to write a java source code without objects, so that the java is 
+refered as object oriented programming language.
+
+Why java is called platform independent? 
+
+>> java is platrorm independent beccause the bytecode file or class file which is 
+genereated after the succssfull compilation of java source code can run in any
+operating system in the presence of java virtual machine, it means the system must have
+the basic java installation.it is because the byte code is a non executable code, to 
+execute this code we heed to have a java interpreter , which is provided by the JVM.
+
+
+
+java virtual Machine
+--------------------
+
+>> it is a virtual machine, which perform the task like the machine without having any
+physical existance.
+>> the task of the jvm is to process the bytecocde file to the processor for the
+execution.
+
+
+java runtime envirounemnt
+--------------------------
+>> it is the software which is responsible for providing the necessary envirounemnt
+or resources to the jvm, so that the jvm can perform its operation without being intrupted.
+
+JIT
+-----
+>> Along with javac , JIT is an additional compiler which are responsible for]
+line by line execution of the executable file and it also responsible for converting 
+the bytecode file to configruation file.
+
+java development kit
+---------------------
+>> it is a java development kit , which is responsible for providing necessary 
+components that are required to compile and execuete the java program.
+
+>> inside jdk there  are compilers , java virtual machine and java runtime envirounemnt.
+
+
+
+Keywords
+--------------
+
+keywords are the set of predefined reserved words defined by the programmaing
+language.
+>> every programming languages have its own set if keywords.
+and in jvaa all the keywords are in lowercase.
+some of the examples of the keyword are: static , public, final, double , int etc.
+
+Identifiers
+-----------
+>> Identifiers are the keywords that are used by the programmers to identify
+the elements in the program.
+>> The identfiers can be classname, variables, mathodname and package name.
+
+varaiables
+----------
+
+>> variables are the identfiers, variables are used to hold some values, and the identfiers
+is used to identify the memory location of the stroed value.
+
+datatype variable_name;
+int x;
+
+Initilization -> int x = 10;
+
+data type 
+
+1. primitive data types
+
+>> primitive data type is such data type which is predefined
+by the language and named by a reserved keyword.
+
+2. non primitive datta types
+>> Non primitive data types are such data types , which are
+not already defined by the language and the user has to do it manually,
+theere are 4 main types non primitive data types.
+<>> String, arrays, class and interface.
+
+
+primitive -> numeric and non numeric
+numeric -> integer, floating point -> long ,  int , byte , short, double, float etc.
+non numeric -> char, boolean
+
+
+
+non-primitive -> class , interfaces.
+
+1 byte = 8 bits -> 2 nibble
+i nibble = 4 bits
+
+operators
+---------
+
+operators are used in java to build the expressions, or to perform the operations.
+
+type of opetartions
+-------------------
+1. relational operator -> <>, <=, >= , != , == 
+2. arethemetic operator -> +, -, *, /, %
+3. logical operator -> || , && 
+4. Bitwise operator (| , &)
+5. unary operator -> ++, --
+
+Control statements
+-------------------
+>> control stattements are used to divert the flow of executions of the program in
+java. and it can be acheived by using both the looping and branching of statements.
+
+Branching refers the use of if, else, if else, nested if and switch statements.
+and looping refers the forloop, foreach loop, while and do while  statements.
+
+Methods
+---------
+
+>> methhods are the set of instructons written by the user to perform some task.
+one of the advantages of methods over unstructured programmig is that it helps
+to acheive the code reusability and increase the modularity of the program.
+

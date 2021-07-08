@@ -1,0 +1,346 @@
+Q1. What is class in  java & write the class templates? 
+
+class is the java defination Block wehich is used to define the state and behaviour 
+of an object.
+in class state represent the charecterstics of an object where behaviour represent the
+functionality of an object.
+
+>> When we create multiple objects of a class , all the objects have some states
+behaviour but difference in values.
+>> Class is the group of Onject which have common properties , it kind of like blueprint
+or template frim which the objects are created.
+>> In java , to crate a class we use the keyword class , which is reserved keyword in java,
+
+class className{
+    // data_members
+    // methods
+}
+
+Q2. What is object in java ? 
+
+>> object is basically a real time entity, runtime entity, or an instatnce
+of a class which has its state and behaviour.
+state can be refered as data_members and behaviour can be refered as methods.
+
+>> there are three ways of initilizing the object. 
+1. by using reference variable 
+2. By using method
+3. by using constructor.
+
+>by using reference variable, 
+lets take one example , 
+
+class Student{
+    public static int id;
+    public staic String name;
+
+}
+
+class Main{
+    public staic void main(String [] args){
+        Student st = new Student(); // st is a reference variable.
+        st.name = "sundar";
+        st.id = "1234"; // initilizing object via reference variable.
+    }
+}
+
+>by using constructor;
+lets take one example , 
+
+class Student{
+    public static int id;
+    public staic String name;
+    Student(int id , String name){
+        this.id = id;
+        this.name = name;
+    }
+}
+
+class Main{
+    public staic void main(String [] args){
+        Student st = new Student(234, "sundar"); // st is a reference variable.
+        // Student() is the parameterized constructor.
+    }
+}
+
+
+>>by using methods;
+lets take one example , 
+
+class Student{
+    public static int id;
+    public staic String name;
+
+    public void initilize_Record(int id_ , String name_){
+        this.id = id_;
+        this.name = name_;
+    }
+}
+
+class Main{
+    public staic void main(String [] args){
+        Student st = new Student();
+        st.initilize_Record(123, "sundar");
+    }
+}
+>> While creating the object, object gets created the memory in the heap memory area , the reference
+variable refers to the object allocated in hte heap memory area.here st is the reference variable which is stored
+in the stack memory and that refers to the objects allocated memory.
+
+
+Q3. What is byte code file? How many
+ byte code files will be generated after 
+ compiling source file?
+
+ ans : The class file , object file and the exe file generated after the
+ succssfull compilation of the java program is called the byte code file.
+
+ program.java
+ javac program.java
+
+ here javac is the Compiler for the java and after the compilation of
+ the java file , there will be additional class file called
+
+ >>program.class , is call the bytecode
+ >> Bytecode generally a instructons set for the java virtual Machine.
+ with the help of byte code file we can acheive the platrorm independence
+ in java.
+
+
+ After the succssfull compilation of the java program , the byte code will be
+ generated and then the bytecode is now ready to seve to the java virtual Machine
+ or bassically an execution of a progarm we call it as , 
+
+ platrorm independence java --> Means the execution of java program is not strictly
+ limited to one platrorm or in operating system. if the system have the basic java
+ installation or by means it has the JVM then we can execuete java program in any platform.\
+
+4 . What will be the name of the bytecode file ???
+
+>> the name of the bytecode file will be same name as className and then the extensioons 
+might be .classs.
+
+5. Command used to compile and execute the java progarm. ?? 
+
+Progarm : Hello.java
+
+>> javac Hello.java
+>> java Hello 
+
+<<< here the javac is the compiler.  first line is used to compile the java program
+if there are any error it will trhrow an error in the console ortherwise the cursor just
+move down and we can make use of another command 
+java Hello // which is basically a execution of the program.
+
+5. Can I declare the local variable  as static ?? 
+
+>> No we cant , The varaiable which has its scope inside the one particular
+method only or inside the curley braces is called the local variable, so we can not declare the local 
+variable as the static, it will throw an Compilation Error, by saying Illegeal Start of an expressoon, only final is alowed.
+
+
+6. Does Java Allows global variable ?? 
+
+>> Java Does not support the concept of Global variable implicitly ,
+>> Global varaiable are those varaiable that can be accessed from all the classes,
+
+we need to craete a class and global variables can be part of this class, 
+can use static variable to create a global variable since static varaiable belong to class and it can be accessed
+across all instatnce of the class.
+
+7. How Many types of variable does java supports ?? 
+
+>>  variable is the container which holds the value when progarm is executed.
+A variable is assigned with the data type. and the value of the variable can be chanegd.
+
+varaiable is simply the name of the memory location: 
+>> There are 3 types of variable in java 
+1. local variable
+
+>> local variable are declared inside the methods , an local variable cannot be declare as static.
+
+>> int sum = 50;
+   // here sum is the variable and the value assigned to it is 50 , the data type is integer. 
+
+
+2. instatnce variable
+
+>> Instance variables are declared in a class, but outside a method, constructor or any block.
+>> When instance variable is declared in a class these varaiable are created when an object of the 
+class is created and destryed when the object is destryed.
+
+>> initilizion of the instance varaiable is not mandatory , its defalut vakue is 0 for int , null for String
+and empty for the char and false for the boolean;
+
+class A {
+    public int a = 10; // insatnce variable
+    public static void main(String [] args){
+        A obj = new A();
+        System.out.println(obj.a); // 10
+    }
+}
+
+
+3. static varaiable.
+>> static varaiable are also known as the class variables.
+
+>> static varaiable are the varaiable which are declare inside the class outside the constructor or methods,
+for the static variable it is mandatory to use the static keyword at the begening of the datatype.
+
+>> static varaiable are created at the statrt of execution of the program and destryed automatically when
+execution ends.
+
+>> static variable can be acessed with the className or with the object of the class Name.
+
+public class test {
+    static int x = 59;
+    public static void main(String[] args) {
+        System.out.println(test.x);
+        
+    } 
+}
+
+8. How to access static & non static members explain with an example. 
+
+>> accessing static data members
+1. by using className if the main method is in the same class otherwise we have to create the object of the class to acceess
+the data members and the methods of the another class.
+2. by creating object of the className
+
+
+>> here we are trying to access the proporties of the class A , from the main methhod which is in same class, 
+we can directly call it using clas Name.
+
+public class test {
+    static int x = 59;
+    public static void print(){
+        // code
+    }
+    public static void main(String[] args) {
+        System.out.println(test.x);
+        test.print(); // access the print method.
+        
+    } 
+}
+
+>> if we want to acces the proporties of anotehr class then we have to crate the object of another class 
+and then through this object we can access the data members of anoter class.
+
+example: 
+
+class A{
+    static int x = 10; // static variable
+    public int y = 34; // instatnce varible
+
+    public void print(){
+        System.out.println("print method");
+    }
+
+    public static int method_name(){
+        return 1;
+    }
+}
+
+class test {
+        public static void main(String[] args) {
+        A obj = new A();
+        System.out.println(obj.x);
+        System.out.println(obj.y);
+        obj.print();
+        obj.method_name();
+    } 
+}
+
+
+Q. When to declare data members as static and non static ?? 
+
+
+
+>> static data members and functions can be accessed in static members as well as non static members functions.
+& and static variable acts as the global variable, and static variable occupies less space in memory
+because the memory allocation happens once when the object is created.
+
+>> non static data members can not be acessed within static data member functions , and non static variable 
+are specefic to instatnce object in which they are created , a non static varaiable may occupy more space 
+since the memory allocation happen in run time.
+
+
+
+public class JavaTester {
+   public int counter = 0; // non staic varaiable
+   public static int staticCounter = 0; // static variable.
+   public JavaTester(){
+      counter++;
+      staticCounter++;
+   }
+   public static void main(String args[]) {
+      JavaTester tester = new JavaTester();
+      JavaTester tester1 = new JavaTester();
+      JavaTester tester2 = new JavaTester();
+      System.out.println("Counter: " + tester2.counter);
+      System.out.println("Static Counter: " + tester2.staticCounter);
+   }
+}
+
+
+Output
+-----------
+Counter: 1
+Static Counter: 3
+
+
+to decide when to declare static and non static data members
+------------------------------------------------------------
+
+if we want to represent the individual information like name , id
+phone number , marks then they must be declared as non static.
+
+>> if we want to represent the common information like city branch,
+college name , then they must declared as static.
+
+>> the memory allocation for the static variable is less as compared to
+non static data members.
+
+
+Blocks
+--------
+
+1. what is block and how many blocks are available in java? 
+
+>> Block is the group of several statmemts , can be single or nested state
+ments.
+in java there are two types of blocks 
+> static block 
+> non sttaic block
+
+2. diffrece between the block and the method.
+>> well, the first the block doesnot have any specefic name while the method must have, 
+and the block does not have any return type and method must have any return type, and Blocks are executed
+automatically while to execute the method we have to call it explicitly.
+
+3. When does the Static blocl will Execute ? 
+ans >> The static block will execute at the time of class Loading.
+
+4. When the non static Block will get executed ? 
+
+ans : the non static block will execuete at the time of object cration, after the execution
+of static blocks.
+
+5. How many times the satic block will execute?
+
+>> Since the class Loading happens only once, the execution of the static block
+happens only once.
+
+6. How Many times the non static block will get execute ?? 
+
+>> the execution  times is strictly depends upon the number of object being created
+of the class.
+
+7. Can i initilize static data members inside non static block? 
+
+ans : Yes , we can use.
+
+
+8. can i initilize non static mem inside static block ?
+
+// no we cant , it gives the compilation error.

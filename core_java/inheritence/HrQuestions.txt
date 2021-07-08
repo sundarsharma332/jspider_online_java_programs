@@ -14,24 +14,22 @@ by Solving Coding problems and learning new technologies.
 -------------------------------------------------------------------------------------
 
 Good Morning Sir/Mam, first of all I'd like thanks Jspider Community for
-this oppertunity. I am sundar Raj Sharma.I was Born and raised in Nepal, I moved here to the engineering ,  But Currently 
-i am persuing my final semester of Bachelor in computer Science and Engineering from KNS 
-institute of technology with an overall CGPA of 7.
-In last couple years, apart from Acedemics i have been envolved in coding and front end
-web development. I have done Couple of projects and internships on the 
-domain of Front end webTechnologies Where I Have built the front end web application 
-using Html, css, javascript bootstrap and react js. well,there is nothing much i have acheived in
-my life , but I have been activity participating in coding compettions. and I beleive that I am 
-good at problem solving & in my free time
-rather than sitting idle,I like to brush up my skills, by Solving Coding problems
-and learning new technologies.
+this oppertunity to attend the mock session.I am sundar Raj Sharma.I was 
+Born and raised in Nepal, currently i am persuing my final semester of 
+Bachelor in computer Scienceand Engineering from KNS institute of technology
+ with an overall CGPA of 7.
+In last couple years, apart from Acedemics i have been envolved
+ in coding and front end web development. I have done Couple of 
+ projects and one internships on the domain of Front end webTechnologies
+  Where I Have Worked on the Latest Front end Web technologies
+like Html5, css3, javascript, bootstrap, jquery and react js and Mysql
+ and mongo Db for the data base Management system, and I have Build
+  the responsive  and dynamic web applications using this technologies,
+  well, In particular there is no great acheivement in my life so far,
+ but I have been activity participating in coding compettions and hackathons
+  to make a better version of myself. and I beleive that I am good at 
+  problem solving & in my free time rather than sitting idle,I like to
+ brush up my skills, by Solving Coding problems and learning new technologies.
 thank you.
 
 ---------------------------------------------------------------------------------------
-
-
-
-
-amitabh
-
-=> 
